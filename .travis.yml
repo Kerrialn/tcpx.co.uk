@@ -1,0 +1,23 @@
+language: php
+
+php: 7.4
+
+branches:
+  only:
+    - master
+
+install:
+  - composer install
+
+scripts:
+  # build static version to /output directory
+  # used for deploy
+  - bin/console dump-static-site --ansi
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+  local_dir: output

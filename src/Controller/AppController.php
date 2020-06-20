@@ -25,10 +25,19 @@ class AppController extends AbstractController
 
 
     /**
-     * @Route("/services", name="app.services")
+     * @Route("/about", name="app.about")
      */
-    public function services()
+    public function about()
     {
-        return $this->render('app/services.html.twig');
+        return $this->render('app/about.html.twig');
+    }
+
+
+    /**
+     * @Route("/pricing", name="app.pricing")
+     */
+    public function pricing()
+    {
+        return $this->render('app/pricing.html.twig');
     }
 }
