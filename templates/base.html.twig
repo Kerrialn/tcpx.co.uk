@@ -34,10 +34,6 @@
                        href="{{ path('app.about') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if app.request.get('_route') == 'app.pricing' %}active{% endif %}"
-                       href="{{ path('app.pricing') }}">Pricing</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link {% if app.request.get('_route') == 'app.contact' %}active{% endif %}"
                        href="{{ path('app.contact') }}">Contact</a>
                 </li>
@@ -46,9 +42,15 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container" style="min-height: 100vh">
     {% block body %}{% endblock %}
 </div>
+
+<div class="footer">
+    <div>TCPX LLP - Company Number: OC432045</div>
+    <div>www.tcpx.co.uk &copy; {{ 'now' | date('Y') }}</div>
+</div>
+
 
 {% block javascripts %}
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -57,6 +59,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
             integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
             crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}
 </body>
 </html>

@@ -4,15 +4,227 @@
 
 {% block body %}
 
-    <div class="row center" id="content">
-        <div class="col-md-6">
+    <style>
+        .price-total, .error {
+            display: none;
+        }
+    </style>
 
-            <div class="box">
+    <form id="estimate-form">
+        <div class="row mt-4 mb-4" id="form-content">
+
+            <div id="errors"></div>
+
+            <div class="col-md-6">
+                <div class="box">
+                    <div class="box-header">Current Project</div>
+                    <div class="box-content">
+                        <div id="input-project">
+
+                            <div class="mb-3">
+                                <label for="input-php-version" class="form-label">PHP Version</label>
+                                <select class="form-select" id="input-php-version">
+                                    <option value="" selected disabled>Select a PHP version</option>
+                                    <option value="56">5.6</option>
+                                    <option value="70">7.0</option>
+                                    <option value="71">7.1</option>
+                                    <option value="72">7.2</option>
+                                    <option value="73">7.3</option>
+                                    <option value="74">7.4</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="input-framework" class="form-label">Framework</label>
+                                <select class="form-select" id="input-framework">
+                                    <option value="" selected disabled>Select a Framework</option>
+                                    <option value="symfony">Symfony</option>
+                                    <option value="laravel">Laravel</option>
+                                    <option value="phalcon">Phalcon</option>
+                                    <option value="zend">Zend framework</option>
+                                    <option value="cakePHP">CakePHP</option>
+                                    <option value="codeIgniter">codeIgniter</option>
+                                    <option value="custom">Custom</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="input-autoloading" class="form-label">Auto loading</label>
+                                <select class="form-select" id="input-autoloading">
+                                    <option value="" selected disabled>Select an autoloader</option>
+                                    <option value="classmap">Class map</option>
+                                    <option value="PSR-4">PSR-4</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="lines-of-code" class="form-label">Lines of Code</label>
+                                <input type="number" class="form-control" id="lines-of-code">
+                                <div id="lines-of-code" class="form-text">Use <a target="_blank" href="https://packagist.org/packages/phploc/phploc">phploc</a> to find your code line count.</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="box">
+                    <div class="box-header">Desired Project</div>
+                    <div class="box-content">
+                        <div id="input-project">
+
+                            <div class="mb-3">
+                                <label for="output-php-version" class="form-label">PHP Version</label>
+                                <select class="form-select" id="output-php-version">
+                                    <option value="" selected disabled>Select a PHP version</option>
+                                    <option value="73">7.3</option>
+                                    <option value="74">7.4</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="output-framework" class="form-label">Framework</label>
+                                <select class="form-select" id="output-framework">
+                                    <option selected disabled>Select a Framework</option>
+                                    <option value="symfony">Symfony</option>
+                                    <option value="laravel">Laravel</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="output-autoloading" class="form-label">Auto loading</label>
+                                <select class="form-select" disabled id="output-autoloading">
+                                    <option value="PSR-4" selected>PSR-4</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 d-flex justify-content-around">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled"
+                                           checked disabled>
+                                    <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Rector</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled"
+                                           checked disabled>
+                                    <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">Easy coding
+                                        standard</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckCheckedDisabled"
+                                           checked disabled>
+                                    <label class="form-check-label" for="flexSwitchCheckCheckedDisabled">PHP
+                                        Stan</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mt-5 text-right">
+                            <button type="submit" class="btn btn-primary">Calculate estimate</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+
+    <div class="row center">
+        <div class="col-md-4">
+            <div class="box price-total">
                 <div class="box-content">
-                    Fees depend
+                    <div class="d-flex justify-content-between">
+                        <div>Per hour</div>
+                        <div>€ <span class="price"></span></div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
+
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        let errors = [];
+        let price = 40;
+        $("#estimate-form").on('submit', function (event) {
+
+            let inputVersion = $('#input-php-version').val();
+            let inputFramework = $('#input-framework').val();
+            let inputAutoloading = $('#input-autoloading').val();
+            let inputLinesOfCode = $('#lines-of-code').val();
+
+            let outputVersion = $('#output-php-version').val();
+            let outputFramework = $('#output-framework').val();
+
+            if (!outputVersion) {
+                errors.push('what is your desired PHP version you would like to migrate to?');
+            }
+
+            if (!outputFramework) {
+                errors.push('what is your desired Framework you would like to migrate to?');
+            }
+
+
+
+            event.preventDefault();
+            price += calculateVersionFee(inputVersion, outputVersion, hours);
+            price += calculateFramework(inputFramework, outputVersion, hours);
+            price += calcuclateAutoloading(inputAutoloading, hours);
+            hours += calculateHours(inputLinesOfCode, inputAutoloading);
+
+            if (errors.length === 0) {
+                $('.price').text(price);
+                $('.hours').text(hours);
+                alert(hours);
+
+                $('.total').text(inputLinesOfCode * hours);
+                $('#estimate-form').hide("fast");
+                $('.price-total').fadeIn("fast");
+            } else {
+                for (var i = 0; i < errors.length; i++) {
+                    $('<div class="alert alert-danger alert-dismissible fade show error" role="alert">' + errors[i] + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>').appendTo($('#errors')).show();
+                }
+            }
+            errors = [];
+        });
+
+        function calcuclateAutoloading(inputAutoloading, hours) {
+            if (!inputAutoloading) {
+                return errors.push('What is your current project\'s Autoloader?');
+            } else {
+                return 2;
+            }
+        }
+
+        function calculateFramework(inputFramework, outputFramework, hours) {
+            if (!inputFramework) {
+                return errors.push('What is your current project\'s Framework?')
+            } else {
+                return 2;
+            }
+        }
+
+        function calculateVersionFee(inputVersion, outputVersion, hours) {
+            if (!inputVersion) {
+                return errors.push('What is your current project\'s PHP version?');
+            } else if (inputVersion === '56' || inputVersion === '70' || inputVersion === '71' || inputVersion === '72') {
+                return 10;
+            } else if (inputVersion === '73' || inputVersion === '74') {
+                return 20;
+            } else {
+                return errors.push('Unknown error');
+            }
+
+        }
+
+    </script>
+
 {% endblock %}
