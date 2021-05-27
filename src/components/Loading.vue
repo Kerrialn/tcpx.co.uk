@@ -1,7 +1,7 @@
 <template>
   <div class="loading">
     <div class="circle"></div>
-    <img alt="Logo" class="logo" src="@/assets/round.png" />
+    <img alt="Logo" class="logo" src="@/assets/round-sm.png" />
   </div>
 </template>
 
