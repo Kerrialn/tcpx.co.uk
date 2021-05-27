@@ -67,22 +67,31 @@ export default {
   justify-content: center;
 }
 
+.ai-center {
+  align-items: center;
+}
+
 .col {
   flex: 0 0 40%;
   margin: 10px;
 }
 
+.col.col-2 {
+  flex: 1 5 25%;
+}
+
 .col.col-3 {
-  flex: 2 2 30% !important;
+  flex: 2 2 30%;
 }
 
 .col.col-9 {
-  flex: 9 9 60% !important;
+  flex: 9 9 60%;
 }
 
 @media (max-width: 800px) {
   .col {
-    flex: 100%;
+    flex: 100% !important;
+    text-align: left;
   }
 }
 
