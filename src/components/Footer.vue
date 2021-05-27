@@ -4,7 +4,12 @@
     <div>
       +420 608 187 548 | info@tcp.co.uk
     </div>
-    <div>TCPX LLP - Company Number: OC432045</div>
+    <div>
+      <div>Company Number: OC432045</div>
+      <div class="muted">
+        Office 4, 219 Kensington High Street, Kensington, London, W8 6BD
+      </div>
+    </div>
   </div>
 </template>
 
