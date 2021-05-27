@@ -42,9 +42,9 @@ export default {
   name: "Home",
   data() {
     return {
-      servicesImage: require("@/assets/services.jpg"),
-      missionImage: require("@/assets/mission.jpg"),
-      aboutImage: require("@/assets/about.jpg"),
+      servicesImage: require("@/assets/services.png"),
+      missionImage: require("@/assets/mission.png"),
+      aboutImage: require("@/assets/about.png"),
     }
   },
 }
@@ -64,7 +64,7 @@ export default {
   font-size: 18px;
   font-weight: 700;
   text-align: center;
-  color: black;
+  color: rgba(1, 24, 38, 1);
   text-transform: uppercase;
 }
 
@@ -73,11 +73,12 @@ export default {
 }
 
 .thumb-img {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   object-fit: cover;
   background-size: cover;
   background-position: center center;
+  border: 3px solid #6c63ff;
 }
 </style>
