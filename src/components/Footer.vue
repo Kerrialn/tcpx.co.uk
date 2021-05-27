@@ -24,8 +24,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(1, 24, 38, 0.05);
-  border-top: 3px solid #011826;
+  background-color: #011826;
+
+  color: #ffffff;
   padding: 20px;
 }
 </style>

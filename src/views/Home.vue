@@ -62,6 +62,7 @@ export default {
 
 .home-menu {
   font-size: 18px;
+  font-weight: 700;
   text-align: center;
   color: black;
   text-transform: uppercase;
