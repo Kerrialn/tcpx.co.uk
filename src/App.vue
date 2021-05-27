@@ -106,4 +106,14 @@ export default {
   color: gray;
   font-size: 14px;
 }
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
 </style>
