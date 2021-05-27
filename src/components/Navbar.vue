@@ -1,11 +1,14 @@
 <template>
-  <div class="navbar">
-    <div>
-      <router-link class="navbar-link brand" tag="a" :to="{ name: 'Home' }"
-        >TCPX</router-link
-      >
+  <div>
+    <div class="navbar">
+      <div>
+        <router-link class="navbar-link brand" tag="a" :to="{ name: 'Home' }"
+          >TCPX</router-link
+        >
+      </div>
+      <div @click="show = !show" class="mdi mdi-menu"></div>
     </div>
-    <div>
+    <div class="container mb text-right" v-if="show">
       <router-link class="navbar-link" tag="a" :to="{ name: 'Services' }"
         >Services</router-link
       >
@@ -22,10 +25,31 @@
 <script>
 export default {
   name: "Navbar",
+  data() {
+    return {
+      show: false,
+    }
+  },
 }
 </script>
 
 <style scoped>
+.mb {
+  margin-bottom: 50px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mdi {
+  font-size: 30px;
+}
+
+.mdi:hover {
+  color: gray;
+}
+
 .navbar .brand {
   font-weight: bold;
   font-size: 24px;
@@ -41,8 +65,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  padding: 20px;
 }
 
 .navbar-link {
