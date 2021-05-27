@@ -3,7 +3,7 @@
     <div class="box">
       <div class="title">Web solutions & analysis</div>
       <div class="subtitle">
-        Bridging the gap between IT and management
+        Bridge the gap between IT and management
       </div>
     </div>
     <div class="row v-center">
@@ -94,14 +94,14 @@ export default {
 }
 
 .services {
-  border: 3px solid #ef0b59;
+  border: 3px solid rgba(239, 11, 89, 0.3);
 }
 
 .mission {
-  border: 3px solid #ffce05;
+  border: 3px solid rgba(255, 206, 5, 0.3);
 }
 
 .about {
-  border: 3px solid #37a2b9;
+  border: 3px solid rgba(55, 162, 185, 0.3);
 }
 </style>
