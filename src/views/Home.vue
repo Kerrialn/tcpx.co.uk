@@ -8,35 +8,35 @@
     </div>
     <div class="row v-center">
       <div class="col col-3">
-        <router-link tag="a" class="card-link" :to="{ name: 'Services' }">
-          <div class="home-menu" title="Services">
-            <div class="thumb-title">Services</div>
-            <div>
-              <img class="thumb-img services" :src="servicesImage" />
-            </div>
-          </div>
+        <router-link
+          tag="a"
+          class="card-link services"
+          :to="{ name: 'Services' }"
+          :style="{ 'background-image': 'url(' + servicesImage + ')' }"
+        >
+          <card title="Services" color="red" />
         </router-link>
       </div>
 
       <div class="col col-3">
-        <router-link tag="a" class="card-link" :to="{ name: 'Mission' }">
-          <div class="home-menu" title="Mission">
-            <div class="thumb-title">Mission</div>
-            <div>
-              <img class="thumb-img mission" :src="missionImage" />
-            </div>
-          </div>
+        <router-link
+          tag="a"
+          class="card-link"
+          :to="{ name: 'Mission' }"
+          :style="{ 'background-image': 'url(' + missionImage + ')' }"
+        >
+          <card title="Mission" color="yellow" />
         </router-link>
       </div>
 
       <div class="col col-3">
-        <router-link tag="a" class="card-link" :to="{ name: 'About' }">
-          <div class="home-menu" title="About">
-            <div class="thumb-title">About</div>
-            <div>
-              <img class="thumb-img about" :src="aboutImage" />
-            </div>
-          </div>
+        <router-link
+          tag="a"
+          class="card-link"
+          :to="{ name: 'About' }"
+          :style="{ 'background-image': 'url(' + aboutImage + ')' }"
+        >
+          <card title="About" color="blue" />
         </router-link>
       </div>
     </div>
@@ -44,21 +44,25 @@
 </template>
 
 <script>
+import Card from "../components/Card.vue"
 export default {
   name: "Home",
+  components: {
+    Card,
+  },
   data() {
     return {
-      servicesImage: require("@/assets/services.png"),
-      missionImage: require("@/assets/mission.png"),
-      aboutImage: require("@/assets/about.png"),
+      servicesImage: require("@/assets/services.jpg"),
+      missionImage: require("@/assets/mission.jpg"),
+      aboutImage: require("@/assets/about.jpeg"),
     }
   },
 }
 </script>
 
 <style scoped>
+
 .v-center {
-  min-height: 70vh;
   align-items: center;
 }
 
@@ -80,28 +84,15 @@ export default {
   color: rgba(1, 24, 38, 1);
 }
 
-.card-link:hover .thumb-img {
-  animation: pulse 2s infinite;
+.card-link:hover {
+  /* animation: pulse 2s infinite; */
 }
 
-.thumb-img {
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  object-fit: cover;
+.card-link {
+  background-position: center top;
   background-size: cover;
-  background-position: center center;
-}
-
-.services {
-  border: 3px solid rgba(239, 11, 89, 0.3);
-}
-
-.mission {
-  border: 3px solid rgba(255, 206, 5, 0.3);
-}
-
-.about {
-  border: 3px solid rgba(55, 162, 185, 0.3);
+  background-repeat: no-repeat;
+  display: block;
+  border-radius: 5px;
 }
 </style>

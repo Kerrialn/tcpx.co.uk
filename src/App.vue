@@ -58,7 +58,7 @@ export default {
 }
 
 .router-view {
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 .row {
