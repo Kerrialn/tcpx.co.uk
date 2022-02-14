@@ -7,7 +7,7 @@
           :color="service.color"
           :content="service.description"
         />
-        <div class="muted">Call us for a free quotation</div>
+        <div class="muted">Call us for a quotation</div>
       </div>
       <div class="col col-9">
         <card

@@ -19,7 +19,7 @@ export default {
     return {
       title: "About us",
       content:
-        "We are a small team of passionate programmers, based in Prague, who are dedecated to providing high quality IT solution services.",
+        "We are a small team of passionate programmers, who are dedicated to providing high quality IT solution services.",
     }
   },
 }

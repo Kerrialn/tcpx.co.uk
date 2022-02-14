@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :class="['card', color, { link: link }]">
+    <div :class="['card', color, { link: link }, { pulse: pulse }]">
       <div class="card-header">
         {{ number ? number + "." : null }} {{ title }}
       </div>
@@ -18,11 +18,13 @@ export default {
     content: String,
     color: String,
     link: Boolean,
+    pulse: Boolean,
   },
 }
 </script>
 
 <style scoped>
+
 .card.orange .card-header {
   border-bottom: 3px solid #e65100;
 }
@@ -46,6 +48,41 @@ export default {
   background-color: rgba(69, 39, 160, 0.05);
 }
 
+.card.red .card-header {
+  /* border-bottom: 3px solid rgba(239, 11, 89, 1); */
+}
+
+.card.red {
+  background-color: rgba(239, 11, 89, 0);
+}
+
+.card.red:hover {
+  background-color: rgba(239, 11, 89, 0.05);
+}
+
+.card.yellow .card-header {
+  /* border-bottom: 3px solid rgba(255, 206, 5, 1); */
+}
+
+.card.yellow {
+  background-color: rgba(255, 206, 5, 0);
+}
+
+.card.yellow:hover {
+  background-color: rgba(255, 206, 5, 0.05);
+}
+
+.card.blue .card-header {
+  /* border-bottom: 3px solid rgba(55, 162, 185, 1); */
+}
+
+.card.blue {
+  background-color: rgba(55, 162, 185, 0);
+}
+.card.blue:hover {
+  background-color: rgba(55, 162, 185, 0.05);
+}
+
 .card {
   background-color: white;
   border-radius: 4px;
@@ -58,6 +95,7 @@ export default {
 
 .card {
   color: #000;
+  height: 40vh;
 }
 
 .card.link:hover {
