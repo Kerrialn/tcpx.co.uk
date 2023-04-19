@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div>
+            <div class="row g-3 justify-content-center">
+                <div class="col-12 col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="nav nav-tabs align-items-center card-header-tabs nav-justified"
+                                 id="v-pills-tab" role="tablist"
+                                 aria-orientation="vertical">
+                                <a href="#technologies" class="nav-link active" id="v-pills-home-tab"
+                                   data-bs-toggle="pill"
+                                   data-bs-target="#technologies" type="button" role="tab"
+                                   aria-controls="v-pills-technologies"
+                                   aria-selected="true">
+                                    Technology <br/> Stack
+                                </a>
+                                <a href="#codebase-modernization" class="nav-link"
+                                   id="v-pills-codebase-modernization-tab"
+                                   data-bs-toggle="pill"
+                                   data-bs-target="#codebase-modernization" type="button" role="tab"
+                                   aria-controls="v-pills-codebase-modernization"
+                                   aria-selected="true">
+                                    Codebase <br/> Modernization
+                                </a>
+                                <a class="nav-link" id="v-pills-feature-development-tab"
+                                   data-bs-toggle="pill"
+                                   data-bs-target="#feature-development" type="button" role="tab"
+                                   aria-controls="v-pills-feature-development"
+                                   aria-selected="false">
+                                    Feature <br/> Development
+                                </a>
+                                <a href="#architecture-consultation" class="nav-link"
+                                   id="v-pills-profile-tab"
+                                   data-bs-toggle="pill"
+                                   data-bs-target="#architecture-consultation" type="button" role="tab"
+                                   aria-controls="v-pills-architecture-consultation"
+                                   aria-selected="false">
+                                    Architecture <br/> Consultation
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tab-content card-body" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="technologies" role="tabpanel"
+                                 aria-labelledby="v-pills-home-tab" tabindex="0">
+                                <p>We offer services for the following technologies:</p>
+                                <ul>
+                                    <li>PHP >=5.6 - >=8.2</li>
+                                    <li>JavaScript ES5 - ES6</li>
+                                    <li>Symfony / Laravel</li>
+                                    <li>Mysql / Postgresql / Mariadb / MSSQL / AWS / Redis</li>
+                                    <li>Docker</li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="codebase-modernization" role="tabpanel"
+                                 aria-labelledby="v-pills-profile-tab" tabindex="0">
+                                <p>
+                                    Codebase modernization is the process of improving old or outdated software
+                                    systems
+                                    to make them work better. Automated refactoring is a way to make this
+                                    process
+                                    faster
+                                    and easier. <br/><br/>
+                                    Instead of manually changing the code, software tools are used to
+                                    automatically
+                                    improve the code without changing how it works. This saves time and effort,
+                                    improves
+                                    the quality of the code, and makes it easier to update and maintain the
+                                    software
+                                    system. <br/><br/>
+                                    By using automated refactoring, businesses can modernize their software
+                                    systems
+                                    and
+                                    stay competitive in today's fast-paced technological landscape.
+                                </p>
+                                <div class="text-center">
+                                    <a class="btn btn-primary"
+                                       href="{{ path('contact') }}">call or email for a quotation</a>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="feature-development" role="tabpanel"
+                                 aria-labelledby="v-pills-profile-tab" tabindex="0">
+                                <p>
+                                    A feature development service provides businesses with experienced software
+                                    developers who can add new functionality to their software
+                                    systems.<br/><br/> By
+                                    following best practices, the developers can ensure high code quality and
+                                    reusability, making it easier to maintain and update the software in the
+                                    future.
+                                    By
+                                    having clean code and reusable code components, this service can also
+                                    improve
+                                    the
+                                    consumption of company resources.
+                                </p>
+                                <div class="text-center">
+                                    <a class="btn btn-primary"
+                                       href="{{ path('contact') }}">call or email for a quotation</a>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="architecture-consultation" role="tabpanel"
+                                 aria-labelledby="v-pills-disabled-tab" tabindex="0">
+                                <p>architecture consultation is crucial for businesses developing web
+                                    applications
+                                    with
+                                    PHP and JavaScript to ensure that their applications are secure. <br/><br/>
+                                    This service provides expert advice on security best practices, identifying
+                                    vulnerabilities, and implementing measures to mitigate risks. By working
+                                    with
+                                    experienced architects, businesses can implement measures to protect
+                                    sensitive
+                                    data,
+                                    prevent security breaches, and maintain the trust of their customers.</p>
+                                <div class="text-center">
+                                    <a class="btn btn-primary"
+                                       href="{{ path('contact') }}">call or email for a quotation</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

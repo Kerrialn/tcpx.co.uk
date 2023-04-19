@@ -1,0 +1,31 @@
+@import "_variables.scss";
+@import "_bootswatch.scss";
+@import "bootstrap.css";
+@import "~@mdi/font";
+
+
+
+
+.nav-tabs .nav-link:hover {
+  background-color: #eeeeee;
+}
+
+.card-header-tabs .nav-link.active {
+  color: #bc0357;
+  font-weight: 900!important;
+  background-color: rgba(255,255,255, 0.7);
+}
+
+.min-vh-80{
+  min-height: 80vh;
+}
+.association-logo{
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.association-logo:hover{
+  opacity: 1;
+  filter: grayscale(0);
+  transition: all 1s ease-in-out;
+}
