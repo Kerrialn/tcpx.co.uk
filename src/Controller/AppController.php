@@ -19,7 +19,6 @@ class AppController extends AbstractController
     public function services() : Response
     {
         return $this->render('app/services.html.twig');
-
     }
 
     #[Route(path: '/about', name: 'about')]

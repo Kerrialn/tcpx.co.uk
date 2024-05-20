@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if shouldRefactor %}
+        Calculator Result - Refactor
+    {% else %}
+        Calculator Result - Rebuild
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <div class="fw-bold">Refactor</div>
+                    <div class="fw-bold">Rebuild</div>
+                </div>
+                <div class="progress mb-5 rounded-pill" style="height: 30px">
+                    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar"
+                         style="width: {{ startFromScratchPercentage }}%;"
+                         aria-valuenow="{{ startFromScratchPercentage }}" aria-valuemin="0"
+                         aria-valuemax="100">{{ startFromScratchPercentage|round(2) }}%
+                    </div>
+                    <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" role="progressbar"
+                         style="width: {{ refactorPercentage }}%;" aria-valuenow="{{ refactorPercentage }}"
+                         aria-valuemin="0" aria-valuemax="100">{{ refactorPercentage|round(2) }}%
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header">
+                        {% if shouldRefactor %}
+                            <div class="fs-4 fw-bold">Refactor</div>
+                        {% else %}
+                            <div class="fs-4 fw-bold">Rebuild</div>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        {% if shouldRefactor %}
+                            <div>
+                                Based on your input and the calculated scores, it seems that refactoring the existing
+                                application is the recommended approach. This suggests that with targeted improvements
+                                and adjustments, the current application can be brought up to the desired standards
+                                without the need for a complete rebuild, potentially saving time and resources.
+                            </div>
+                        {% else %}
+                            <div>
+                                Based on your input and the calculated scores, it appears that starting from scratch may
+                                be the most suitable approach. This indicates that the effort required to refactor the
+                                existing application might outweigh the benefits, and a fresh start could lead to a more
+                                efficient and effective solution.
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>Technical Debt</div>
+                            <div class="badge text-bg-dark">{{ refactorModel.technicalDebt }}
+                                / {{ refactorModel.weightedTechnicalDebt }}</div>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>Feature Incompleteness</div>
+                            <div class="badge text-bg-dark">{{ refactorModel.featureIncompleteness }}
+                                / {{ refactorModel.weightedFeatureIncompleteness }}</div>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>Team Expertise</div>
+                            <div class="badge text-bg-dark">{{ refactorModel.teamExpertise }}
+                                / {{ refactorModel.weightedTeamExpertise }}</div>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>Time Constraints</div>
+                            <div class="badge text-bg-dark">{{ refactorModel.timeConstraints }}
+                                / {{ refactorModel.weightedTimeConstraints }}</div>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>Cost Constraints</div>
+                            <div class="badge text-bg-dark">{{ refactorModel.costConstraints }}
+                                / {{ refactorModel.weightedCostConstraints }}</div>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>Failure Risk</div>
+                            <div class="badge text-bg-dark">{{ refactorModel.failureRisk }}
+                                / {{ refactorModel.weightedFailureRisk }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if shouldRefactor %}
+                    <div class="card mb-5">
+                        <div class="card-body">
+                            If you wish to continue with refactoring your application and need assistance, feel free to
+                            contact us to organise a comprehensive codebase analysis.
+                        </div>
+                        <div class="card-footer text-center">
+                            <a class="btn btn-dark w-100" href="{{ path('contact') }}">Contact Us</a>
+                        </div>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
