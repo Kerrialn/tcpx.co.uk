@@ -1,122 +1,146 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% set strings = [
+        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Reduce Development Costs</span></div>',
+        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Reduce Technical Debt</span></div>',
+        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Ensure Compliance and Security</span></div>',
+        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Improve Software Performance</span></div>',
+        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Enhance Application Scalability</span></div>',
+        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Increase Stability and Reliability</span></div>',
+        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Future-Proof Your Software</span></div>',
+        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Boost Customer Satisfaction</span></div>',
+    ] %}
+
+
     <div class="container">
         <div class="row g-2 justify-content-center">
+
+
             <div class="col-12 col-md-8">
-                <div class="mb-3">
-                    <div class="display-4 text-black fw-bold text-uppercase">
-                        Code <span style="color: #bc0357;">smarter</span>, <br/> not harder.
+                <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                    <div class="carousel-inner">
+                        {% for item in strings %}
+                            <div class="carousel-item {{ loop.first ? 'active' }}" data-bs-interval="10000">
+
+                                <div class="text-white fw-bold rounded-3 text-center m-3"
+                                     style="background-color: #e0e2e3;background-image: url({{ asset('images/code-carousel.png') }});background-size: cover">
+                                    <div class="pt-5 rounded-top px-2" style="background-color: rgba(0,0,0,0.45)">{{ item|raw }}</div>
+                                    <div class="py-4 rounded-bottom" style="background-color: rgba(0,0,0,0.45)">
+                                        <a href="{{ path('services') }}" class="btn btn-dark" type="button">View
+                                            Services</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
-
-                    <h3 class="mb-3 mt-3 text-muted">
-                        We specialise in codebase upgrading & migration<br/><br/>
-                    </h3>
-
-                    <ul class="fs-4 mb-5">
-                        <li>Need to improve code quality?</li>
-                        <li>Need to upgrade PHP or Java version?</li>
-                        <li>Need to upgrade PHP or Java framework version?</li>
-                    </ul>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
 
-                <iframe width="100%" height="415" src="https://www.youtube.com/embed/_it2tI3ZkMM?si=CWosCYVfp-b5kgyX&autoplay=1&mute=1" title="YouTube video player"  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
 
-                <br/>
-                <br/>
 
-                <div class="display-6 mt-5 mb-2 text-black fw-bold text-uppercase">
-                    What is the upgrade process?
-                </div>
-
-                <div class="lead my-3">A project upgrade often involves upgrading from a programming language and/or
-                    upgrading a framework version. We take the following steps to ensure a safe and consistent upgrade.
-                </div>
-
-                <div class="list-group list-group-flush mb-5">
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-                        <div class="fs-3 d-flex justify-content-start align-items-center">
-                            <div class="mdi mdi-numeric-1-circle fs-1 me-3"></div>
-                            <div>Analysis</div>
-                        </div>
-                    </div>
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-                        <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                        <div>We sign a Non-disclosure agreement (NDA) so you know your code is in safe hands.</div>
-                    </div>
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-                        <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                        <div>We run automated analysis programs to find issue in your codebase.</div>
-                    </div>
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-                        <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                        <div>We deliver, for a one-time pre-payment of 5,000 - 8,000 EUR, a PDF report of found issues
-                            and
-                            a timeline for fixing them.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-group list-group-flush mb-5">
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-
-                        <div class="fs-3 d-flex justify-content-start align-items-center">
-                            <div class="mdi mdi-numeric-2-circle fs-1 me-3"></div>
-                            <div>Upgrade</div>
-                        </div>
-                    </div>
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-                        <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                        <div>We will work in parallel with your team for 20 - 40 hours per week
-                            implementing fixes to your codebase.
-                        </div>
-                    </div>
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-                        <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                        <div>We start with the smallest and easiest issues, we work on a start one -
-                            finish one basis, this means we create a change and merge it immediately, no stale branches.
-                        </div>
-                    </div>
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-                        <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                        <div>We can schedule once a month meetings to discuss progress, blockers and adapt
-                            strategy if need be.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="list-group list-group-flush mb-5">
-                    <div class="list-group-item d-flex justify-content-start align-items-center">
-                        <div class="fs-3">How much does it cost?</div>
-                    </div>
-                    <div class="list-group-item d-flex justify-content-start align-items-start">
-                        <div class="mdi mdi-currency-eur lh-1 text-success fs-1 me-3"></div>
-                        <div>
-                            <div>5,000 - 8,000 EUR one-time payment for the analysis report</div>
-                            <div>120-150 EUR per hour / invoiced weekly or monthly</div>
-                        </div>
-                    </div>
+            <div class="col-12 col-md-8">
+                <div class="my-5 lead text-center">
+                    Ready to upgrade your PHP project?
                 </div>
 
 
+                <div class="fs-2 fw-bold mt-5 mb-3">What do our clients say?</div>
+
+                <figure class="d-flex justify-content-start align-items-start">
+                    <div class="me-3">
+                        <img class="rounded-circle border border-3" width="50" height="50"
+                             src="{{ asset('images/testimoals/dave.jpeg') }}">
+                    </div>
+                    <div>
+                        <blockquote class="blockquote">
+                            <p>"I take this opportunity to thank you for the massive effort you have put into getting
+                                our project off the ground."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer text-end">
+                            <cite title="Source Title">David Nunn - Senior Product Owner at RWE Renewables - RWE</cite>
+                        </figcaption>
+                    </div>
+                </figure>
+                <hr/>
+                <figure class="d-flex justify-content-start align-items-start">
+                    <div class="me-3">
+                        <img class="rounded-circle border border-3" width="50" height="50"
+                             src="{{ asset('images/testimoals/chris.jpeg') }}">
+                    </div>
+                    <div>
+                        <blockquote class="blockquote">
+                            <p>"Working with TCPX has been a phenomenal experience, so straight forward from the outset,
+                                they demonstrated exceptional expertise and professionalism."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer text-end">
+                            <cite title="Source Title">Christopher Carus - Co-Founder and CTO - Jut-so</cite>
+                        </figcaption>
+                    </div>
+                </figure>
+                <hr/>
+                <figure class="d-flex justify-content-start align-items-start">
+                    <div class="me-3">
+                        <img class="rounded-circle border border-3" width="50" height="50"
+                             src="{{ asset('images/testimoals/grant.jpeg') }}">
+                    </div>
+                    <div>
+                        <blockquote class="blockquote">
+                            <p>"This was a game-changer for us. Not only streamlined our codebase but also significantly
+                                reduced our development costs. Our software runs faster, and the stability improvements
+                                have been remarkable."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer text-end">
+                            <cite title="Source Title">Grant Purviss - Director - Engiserve</cite>
+                        </figcaption>
+                    </div>
+                </figure>
+                <hr/>
+                <figure class="d-flex justify-content-start align-items-start">
+                    <div class="me-3">
+                        <img class="rounded-circle border border-3" width="50" height="50"
+                             src="{{ asset('images/testimoals/ryan.jpeg') }}">
+                    </div>
+                    <div>
+                        <blockquote class="blockquote">
+                            <p>"I'll admit, I was skeptical about the reality of automated refactoring at first.
+                                The idea of trusting an external with our codebase seemed risky.
+                                However, my doubts were completely dispelled. They have transformed our
+                                software."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer text-end">
+                            <cite title="Source Title">Ryan Jones - Project Manager</cite>
+                        </figcaption>
+                    </div>
+                </figure>
             </div>
 
 
             <div class="row mt-5 g-3 justify-content-around align-items-center">
                 <hr/>
-                <div class="col-4 col-md-3">
+                <div class="col-3 col-md-2">
                     <img class="img-fluid association-logo"
                          src="{{ asset('images/assosiation/rwe-logo-300.png') }}">
                 </div>
-                <div class="col-4 col-md-3">
+                <div class="col-3 col-md-2">
                     <img class="img-fluid association-logo"
                          src="{{ asset('images/assosiation/vodafone-logo-300.png') }}">
                 </div>
-                <div class="col-4 col-md-3">
+                <div class="col-3 col-md-2">
                     <img class="img-fluid association-logo"
                          src="{{ asset('images/assosiation/rector-logo-300.png') }}">
                 </div>
-                <div class="col-4 col-md-3">
+                <div class="col-3 col-md-2">
                     <img class="img-fluid association-logo"
                          src="{{ asset('images/assosiation/townpoint-logo-300.png') }}">
                 </div>
