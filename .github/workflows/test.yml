@@ -1,15 +1,27 @@
 name: Tests
 
 on:
-    push:
-    pull_request:
+  push:
+  pull_request:
 
 jobs:
   tests:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://customizer:customizer@127.0.0.1:5432/customizer?serverVersion=13&charset=utf8
+
+    services:
+      db:
+        image: postgres:13
+        env:
+          POSTGRES_USER: customizer
+          POSTGRES_PASSWORD: customizer
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        ports:
+          - 5432:5432
 
     steps:
-      -   uses: actions/checkout@v4
+      -   uses: actions/checkout@v2
       -   uses: shivammathur/setup-php@v2
           with:
             php-version: 8.2
@@ -17,52 +29,44 @@ jobs:
             extensions: mbstring, uuid # needed by phpunit
 
       -   run: composer install --dev --no-progress
+      -   run: yarn install
+      -   run: yarn run dev
+      -   run: vendor/bin/phpunit
 
-  assetMapper:
+
+  ecs:
     runs-on: ubuntu-latest
     steps:
-      -   uses: actions/checkout@v4
+      -   uses: actions/checkout@v2
       -   uses: shivammathur/setup-php@v2
           with:
             php-version: 8.2
-            coverage: none
+            coverage: none # default is xdebug
 
       -   run: composer install --dev --no-progress
-      -   run: php bin/console asset-map:compile
-
-  ecs:
-      runs-on: ubuntu-latest
-      steps:
-        -   uses: actions/checkout@v4
-        -   uses: shivammathur/setup-php@v2
-            with:
-              php-version: 8.2
-              coverage: none
-
-        -   run: composer install --dev --no-progress
-        -   run: composer run-script check-cs
+      -   run: composer run-script check-cs
 
 
   rector:
-      runs-on: ubuntu-latest
-      steps:
-        -   uses: actions/checkout@v4
-        -   uses: shivammathur/setup-php@v2
-            with:
-              php-version: 8.2
-              coverage: none
+    runs-on: ubuntu-latest
+    steps:
+      -   uses: actions/checkout@v2
+      -   uses: shivammathur/setup-php@v2
+          with:
+            php-version: 8.2
+            coverage: none # default is xdebug
 
-        -   run: composer install --dev --no-progress
-        -   run: composer run-script rector-dry
+      -   run: composer install --dev --no-progress
+      -   run: composer run-script rector-dry
 
   phpstan:
-      runs-on: ubuntu-latest
-      steps:
-        -   uses: actions/checkout@v4
-        -   uses: shivammathur/setup-php@v2
-            with:
-              php-version: 8.2
-              coverage: none # default is xdebug
+    runs-on: ubuntu-latest
+    steps:
+      -   uses: actions/checkout@v2
+      -   uses: shivammathur/setup-php@v2
+          with:
+            php-version: 8.2
+            coverage: none # default is xdebug
 
-        -   run: composer install --dev --no-progress
-        -   run: composer run-script phpstan
+      -   run: composer install --dev --no-progress
+      -   run: composer run-script phpstan
