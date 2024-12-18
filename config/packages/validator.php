@@ -6,9 +6,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->extension('framework', [
-        'validation' => [
-            'email_validation_mode' => 'html5',
-        ],
+        'validation' => null,
     ]);
     if ($containerConfigurator->env() === 'test') {
         $containerConfigurator->extension('framework', [

@@ -6,10 +6,12 @@
     <title>{% block title %}TCPX LLP{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 
     {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>
         <script>
