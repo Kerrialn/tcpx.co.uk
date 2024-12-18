@@ -14,6 +14,6 @@ return [
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     Symfony\UX\Turbo\TurboBundle::class => ['all' => true],
     Symfony\UX\Typed\TypedBundle::class => ['all' => true],
-    Stenope\Bundle\StenopeBundle::class => ['all' => true],
     Symfony\UX\StimulusBundle\StimulusBundle::class => ['all' => true],
+    Stenope\Bundle\StenopeBundle::class => ['all' => true],
 ];
