@@ -9,8 +9,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         'secret' => '%env(APP_SECRET)%',
         'session' => true,
         'assets' => [
-            'base_path' => ''
-        ]
+            'base_path' => '',
+        ],
     ]);
     if ($containerConfigurator->env() === 'test') {
         $containerConfigurator->extension('framework', [
