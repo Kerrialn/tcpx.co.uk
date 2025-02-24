@@ -1,20 +1,33 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Model;
 
 class RefactorModel
 {
     private int $technicalDebt;
+
     private int $weightedTechnicalDebt;
+
     private int $featureIncompleteness;
+
     private int $weightedFeatureIncompleteness;
+
     private int $teamExpertise;
+
     private int $weightedTeamExpertise;
+
     private int $timeConstraints;
+
     private int $weightedTimeConstraints;
+
     private int $costConstraints;
+
     private int $weightedCostConstraints;
+
     private int $failureRisk;
+
     private int $weightedFailureRisk;
 
     public function __construct(
@@ -165,5 +178,4 @@ class RefactorModel
     {
         $this->weightedFailureRisk = $weightedFailureRisk;
     }
-
 }

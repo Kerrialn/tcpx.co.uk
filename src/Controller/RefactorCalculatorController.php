@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use App\Form\Form\RefactorCalculatorFormType;
@@ -12,8 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RefactorCalculatorController extends AbstractController
 {
-
-
     public function __construct(
         private RefactorCalculationServiceInterface $refactorCalculationService
     )
@@ -41,14 +41,12 @@ class RefactorCalculatorController extends AbstractController
                 'refactorCalculationScore' => $refactorCalculationScore,
                 'scratchCalculationScore' => $scratchCalculationScore,
                 'refactorPercentage' => $refactorPercentage,
-                'startFromScratchPercentage' => $startFromScratchPercentage
+                'startFromScratchPercentage' => $startFromScratchPercentage,
             ]);
         }
 
         return $this->render('calculator/index.html.twig', [
-            'refactorCalculatorForm' => $refactorCalculatorForm
+            'refactorCalculatorForm' => $refactorCalculatorForm,
         ]);
     }
-
-
 }

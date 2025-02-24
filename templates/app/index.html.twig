@@ -16,16 +16,15 @@
     <div class="container">
         <div class="row g-2 justify-content-center">
 
-
             <div class="col-12 col-md-8">
                 <div id="carouselExampleDark" class="carousel slide">
                     <div class="carousel-inner">
                         {% for item in strings %}
                             <div class="carousel-item {{ loop.first ? 'active' }}" data-bs-interval="10000">
-
-                                <div class="text-white fw-bold rounded-3 text-center m-3"
+                                <div class="text-white fw-bold rounded-3 text-center my-3"
                                      style="background-color: #e0e2e3;background-image: url({{ asset('images/code-carousel.png') }});background-size: cover">
-                                    <div class="pt-5 rounded-top px-2" style="background-color: rgba(0,0,0,0.45)">{{ item|raw }}</div>
+                                    <div class="pt-5 rounded-top px-2"
+                                         style="background-color: rgba(0,0,0,0.45)">{{ item|raw }}</div>
                                     <div class="py-4 rounded-bottom" style="background-color: rgba(0,0,0,0.45)">
                                         <a href="{{ path('services') }}" class="btn btn-dark" type="button">View
                                             Services</a>
@@ -52,6 +51,17 @@
             <div class="col-12 col-md-8">
                 <div class="my-5 lead text-center">
                     Ready to upgrade your PHP project?
+                </div>
+
+                <div class="p-5 text-center bg-body-tertiary rounded-3">
+                    <h1 class="text-body-emphasis">Free Project Analysis</h1>
+                    <p class="lead">
+                        Limited-time offer! Save up to 8,000 EUR. Contact us now to schedule your project analysis. Get
+                        a full report on areas for improvement and a detailed roadmap to success.
+                    </p>
+                    <div class="text-center">
+                        <a href="{{ path('contact') }}" class="btn btn-secondary">Claim free analysis now</a>
+                    </div>
                 </div>
 
 

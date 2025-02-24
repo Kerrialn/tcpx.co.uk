@@ -1,0 +1,66 @@
+{
+    "app": {
+        "path": "\/assets\/app-ewW9Uf3.js",
+        "type": "js"
+    },
+    "\/assets\/styles\/app.css": {
+        "path": "\/assets\/styles\/app-maoG0wF.css",
+        "type": "css"
+    },
+    "\/assets\/bootstrap.js": {
+        "path": "\/assets\/bootstrap-oQyLn8f.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/stimulus-bundle\/controllers.js": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/controllers-pyqa-xR.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-turbo\/turbo_controller.js": {
+        "path": "\/assets\/@symfony\/ux-turbo\/turbo_controller-zl4y2v3.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-typed\/controller.js": {
+        "path": "\/assets\/@symfony\/ux-typed\/controller-KqqaUoQ.js",
+        "type": "js"
+    },
+    "\/assets\/controllers\/hello_controller.js": {
+        "path": "\/assets\/controllers\/hello_controller-VYgvytJ.js",
+        "type": "js"
+    },
+    "@hotwired\/stimulus": {
+        "path": "\/assets\/vendor\/@hotwired\/stimulus\/stimulus.index-oUGxBTh.js",
+        "type": "js"
+    },
+    "@symfony\/stimulus-bundle": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/loader-hwmZoC6.js",
+        "type": "js"
+    },
+    "@hotwired\/turbo": {
+        "path": "\/assets\/vendor\/@hotwired\/turbo\/turbo.index-gQ9E7xo.js",
+        "type": "js"
+    },
+    "typed.js": {
+        "path": "\/assets\/vendor\/typed.js\/typed.js.index-_zctSmG.js",
+        "type": "js"
+    },
+    "@stimulus-components\/clipboard": {
+        "path": "\/assets\/vendor\/@stimulus-components\/clipboard\/clipboard.index-j0OMLL_.js",
+        "type": "js"
+    },
+    "@stimulus-components\/scroll-progress": {
+        "path": "\/assets\/vendor\/@stimulus-components\/scroll-progress\/scroll-progress.index-MLoYIcU.js",
+        "type": "js"
+    },
+    "bootstrap": {
+        "path": "\/assets\/vendor\/bootstrap\/bootstrap.index-rt72SdS.js",
+        "type": "js"
+    },
+    "@popperjs\/core": {
+        "path": "\/assets\/vendor\/@popperjs\/core\/core.index-ZE0xRfu.js",
+        "type": "js"
+    },
+    "bootstrap\/dist\/css\/bootstrap.min.css": {
+        "path": "\/assets\/vendor\/bootstrap\/dist\/css\/bootstrap.min-FxLwN4-.css",
+        "type": "css"
+    }
+}

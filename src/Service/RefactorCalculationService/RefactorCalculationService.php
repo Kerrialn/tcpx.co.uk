@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Service\RefactorCalculationService;
 
 use App\Model\RefactorModel;
@@ -7,7 +9,6 @@ use App\Service\RefactorCalculationService\Contract\RefactorCalculationServiceIn
 
 class RefactorCalculationService implements RefactorCalculationServiceInterface
 {
-
     public function calculate(RefactorModel $refactorModel): int
     {
         return (
