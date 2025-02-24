@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-            <url>
-            <loc>https://tcpx.co.uk/</loc>
-            <lastmod>2025-02-24T18:48:38+00:00</lastmod>            <priority>0</priority>            <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>https://tcpx.co.uk/services</loc>
-            <lastmod>2025-02-24T18:48:38+00:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>https://tcpx.co.uk/about</loc>
-            <lastmod>2025-02-24T18:48:38+00:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-            <url>
-            <loc>https://tcpx.co.uk/contact</loc>
-            <lastmod>2025-02-24T18:48:38+00:00</lastmod>                        <changefreq>monthly</changefreq>
-        </url>
-    </urlset>
+    <url>
+        <loc>https://tcpx.co.uk/</loc>
+        <lastmod>2025-02-24T18:48:38+00:00</lastmod>
+        <priority>0</priority>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://tcpx.co.uk/services</loc>
+        <lastmod>2025-02-24T18:48:38+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://tcpx.co.uk/about</loc>
+        <lastmod>2025-02-24T18:48:38+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://tcpx.co.uk/contact</loc>
+        <lastmod>2025-02-24T18:48:38+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+</urlset>
