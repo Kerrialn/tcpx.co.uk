@@ -1,0 +1,66 @@
+{
+    "app": {
+        "path": "\/\/app-ewW9Uf3.js",
+        "type": "js"
+    },
+    "\/\/styles\/app.css": {
+        "path": "\/\/styles\/app-maoG0wF.css",
+        "type": "css"
+    },
+    "\/\/bootstrap.js": {
+        "path": "\/\/bootstrap-oQyLn8f.js",
+        "type": "js"
+    },
+    "\/\/@symfony\/stimulus-bundle\/controllers.js": {
+        "path": "\/\/@symfony\/stimulus-bundle\/controllers-pyqa-xR.js",
+        "type": "js"
+    },
+    "\/\/@symfony\/ux-turbo\/turbo_controller.js": {
+        "path": "\/\/@symfony\/ux-turbo\/turbo_controller-zl4y2v3.js",
+        "type": "js"
+    },
+    "\/\/@symfony\/ux-typed\/controller.js": {
+        "path": "\/\/@symfony\/ux-typed\/controller-KqqaUoQ.js",
+        "type": "js"
+    },
+    "\/\/controllers\/hello_controller.js": {
+        "path": "\/\/controllers\/hello_controller-VYgvytJ.js",
+        "type": "js"
+    },
+    "@hotwired\/stimulus": {
+        "path": "\/\/vendor\/@hotwired\/stimulus\/stimulus.index-oUGxBTh.js",
+        "type": "js"
+    },
+    "@symfony\/stimulus-bundle": {
+        "path": "\/\/@symfony\/stimulus-bundle\/loader-hwmZoC6.js",
+        "type": "js"
+    },
+    "@hotwired\/turbo": {
+        "path": "\/\/vendor\/@hotwired\/turbo\/turbo.index-gQ9E7xo.js",
+        "type": "js"
+    },
+    "typed.js": {
+        "path": "\/\/vendor\/typed.js\/typed.js.index-_zctSmG.js",
+        "type": "js"
+    },
+    "@stimulus-components\/clipboard": {
+        "path": "\/\/vendor\/@stimulus-components\/clipboard\/clipboard.index-j0OMLL_.js",
+        "type": "js"
+    },
+    "@stimulus-components\/scroll-progress": {
+        "path": "\/\/vendor\/@stimulus-components\/scroll-progress\/scroll-progress.index-MLoYIcU.js",
+        "type": "js"
+    },
+    "bootstrap": {
+        "path": "\/\/vendor\/bootstrap\/bootstrap.index-rt72SdS.js",
+        "type": "js"
+    },
+    "@popperjs\/core": {
+        "path": "\/\/vendor\/@popperjs\/core\/core.index-ZE0xRfu.js",
+        "type": "js"
+    },
+    "bootstrap\/dist\/css\/bootstrap.min.css": {
+        "path": "\/\/vendor\/bootstrap\/dist\/css\/bootstrap.min-FxLwN4-.css",
+        "type": "css"
+    }
+}

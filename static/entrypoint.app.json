@@ -1,0 +1,17 @@
+[
+    "\/\/styles\/app.css",
+    "bootstrap",
+    "\/\/bootstrap.js",
+    "bootstrap\/dist\/css\/bootstrap.min.css",
+    "@popperjs\/core",
+    "@symfony\/stimulus-bundle",
+    "@stimulus-components\/clipboard",
+    "@stimulus-components\/scroll-progress",
+    "@hotwired\/stimulus",
+    "\/\/@symfony\/stimulus-bundle\/controllers.js",
+    "\/\/@symfony\/ux-turbo\/turbo_controller.js",
+    "\/\/@symfony\/ux-typed\/controller.js",
+    "\/\/controllers\/hello_controller.js",
+    "@hotwired\/turbo",
+    "typed.js"
+]
