@@ -1,52 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% set strings = [
-        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Reduce Development Costs</span></div>',
-        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Reduce Technical Debt</span></div>',
-        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Ensure Compliance and Security</span></div>',
-        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Improve Software Performance</span></div>',
-        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Enhance Application Scalability</span></div>',
-        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Increase Stability and Reliability</span></div>',
-        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Future-Proof Your Software</span></div>',
-        '<div class="display-3 text-uppercase fw-bold py-5">We can help <span style="color: #bc0357;">Boost Customer Satisfaction</span></div>',
-    ] %}
 
 
     <div class="container">
         <div class="row g-2 justify-content-center">
 
             <div class="col-12 col-md-8">
-                <div id="carouselExampleDark" class="carousel slide">
-                    <div class="carousel-inner">
-                        {% for item in strings %}
-                            <div class="carousel-item {{ loop.first ? 'active' }}" data-bs-interval="10000">
-                                <div class="text-white fw-bold rounded-3 text-center my-3"
-                                     style="background-color: #e0e2e3;background-image: url({{ asset('images/code-carousel.png') }});background-size: cover">
-                                    <div class="pt-5 rounded-top px-2"
-                                         style="background-color: rgba(0,0,0,0.45)">{{ item|raw }}</div>
-                                    <div class="py-4 rounded-bottom" style="background-color: rgba(0,0,0,0.45)">
-                                        <a href="{{ path('services') }}" class="btn btn-dark" type="button">View
-                                            Services</a>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
-                            data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-
+                <video class="rounded rounded-3 object-fit-cover w-100" autoplay muted height="auto">
+                    <source src="{{ asset('images/intro.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-
 
             <div class="col-12 col-md-8">
                 <div class="my-5 lead text-center">
