@@ -22,10 +22,10 @@ final class AppController extends AbstractController
         return $this->render('app/services.html.twig');
     }
 
-    #[Route(path: '/about', name: 'about')]
-    public function about(): Response
+    #[Route(path: '/faq', name: 'faq')]
+    public function faq(): Response
     {
-        return $this->render('app/about.html.twig');
+        return $this->render('app/faq.html.twig');
     }
 
     #[Route(path: '/contact', name: 'contact')]

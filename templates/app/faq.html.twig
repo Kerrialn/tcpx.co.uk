@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <!-- Page title -->
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">
+                    Common questions about our upgrade process, methodology and collaboration.
+                </p>
+
+                <!-- FAQ list -->
+                <div class="space-y-4">
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            How do you manage all the layers — infrastructure, framework, domain logic, database, views, integrations and cross-cutting concerns?
+                        </summary>
+                        <div class="mt-2 space-y-3 text-gray-700 dark:text-gray-300">
+                            <p>
+                                We break an application down into seven layers and modernise each one in the right order. That way complexity is contained and upgrades don’t blow up downstream.
+                            </p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><span class="font-medium">Infrastructure / Environment:</span> PHP runtime, extensions, containers, servers, build pipelines.</li>
+                                <li><span class="font-medium">Framework:</span> routing, dependency injection, request/response, authentication/authorization.</li>
+                                <li><span class="font-medium">Domain Logic:</span> business rules, services, entities, events — separated so it outlives any framework.</li>
+                                <li><span class="font-medium">Database / Persistence:</span> schema, migrations, ORM mappings, raw queries. Normalised with our DB Fixer tooling.</li>
+                                <li><span class="font-medium">Presentation / Views:</span> templates, frontend assets, emails, reports. Converted incrementally (e.g. legacy PHP → Twig).</li>
+                                <li><span class="font-medium">Integrations / APIs:</span> external SDKs, internal APIs, webhooks, queues. Updated and versioned safely.</li>
+                                <li><span class="font-medium">Cross-Cutting Concerns:</span> security, logging, monitoring, caching, background jobs, configuration.</li>
+                            </ul>
+                            <p>
+                                We use a variety of in-house tools and proven open-source technologies to handle each layer —
+                                from database fixes to code refactoring and view conversion. Combined with our
+                                start-one-finish-one discipline, this ensures upgrades are safe, predictable, and never chaotic.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Do you work on WordPress?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            No. We focus on non-WordPress PHP systems and bespoke applications where migration risk and
+                            valuation impact are highest.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Can you work with our in-house developers?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Yes. We embed alongside your team, bringing upgrade tooling, checklists and senior guidance.
+                            Your team retains ownership; we eliminate risk.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            How do you minimise downtime?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            We ship in small slices behind feature flags, with automated smoke tests and database safety
+                            checks. No big-bang releases.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            What size projects do you usually take on?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Typical engagements range from €150k to €200k, delivered in production-safe increments.
+                            Smaller audits and advisory projects are also available.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Do you offer white-label services for agencies?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Yes. We operate as a white-label migration partner for digital agencies. You keep the client
+                            relationship, we deliver the migration.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

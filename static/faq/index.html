@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/images/logo.png"/>
-    <title>TCPX</title>
+    <title>FAQ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta name="description" content="Upgrade your PHP applications with TCPX. We specialize in PHP version upgrades, framework migrations, and database transitions to ensure security, performance, and maintainability. Contact us today!">
@@ -119,7 +119,7 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
                 <li>
                     <a href="/faq"
                        class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
-                       text-gray-500 dark:text-gray-400">
+                       text-white">
                         FAQ
                     </a>
                 </li>
@@ -137,128 +137,92 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
 
 <main class="min-h-screen">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center">
-
+        <div class="flex justify-center">
             <div class="w-full md:w-8/12">
-                <video class="w-full h-auto rounded-lg object-cover" autoplay muted>
-                    <source src="/images/intro.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
 
-            <div class="w-full md:w-8/12 mt-8">
-                <figure class="max-w-screen-md mx-auto text-center mb-12">
-                    <svg class="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
-                        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
-                    </svg>
-                    <blockquote>
-                        <p class="text-2xl italic font-medium text-gray-900 dark:text-white">
-                            “Modernising isn’t a cost — it’s an investment that adds €X to your valuation and consolidates your exit strategy.”
+                <!-- Page title -->
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">
+                    Common questions about our upgrade process, methodology and collaboration.
+                </p>
+
+                <!-- FAQ list -->
+                <div class="space-y-4">
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            How do you manage all the layers — infrastructure, framework, domain logic, database, views, integrations and cross-cutting concerns?
+                        </summary>
+                        <div class="mt-2 space-y-3 text-gray-700 dark:text-gray-300">
+                            <p>
+                                We break an application down into seven layers and modernise each one in the right order. That way complexity is contained and upgrades don’t blow up downstream.
+                            </p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><span class="font-medium">Infrastructure / Environment:</span> PHP runtime, extensions, containers, servers, build pipelines.</li>
+                                <li><span class="font-medium">Framework:</span> routing, dependency injection, request/response, authentication/authorization.</li>
+                                <li><span class="font-medium">Domain Logic:</span> business rules, services, entities, events — separated so it outlives any framework.</li>
+                                <li><span class="font-medium">Database / Persistence:</span> schema, migrations, ORM mappings, raw queries. Normalised with our DB Fixer tooling.</li>
+                                <li><span class="font-medium">Presentation / Views:</span> templates, frontend assets, emails, reports. Converted incrementally (e.g. legacy PHP → Twig).</li>
+                                <li><span class="font-medium">Integrations / APIs:</span> external SDKs, internal APIs, webhooks, queues. Updated and versioned safely.</li>
+                                <li><span class="font-medium">Cross-Cutting Concerns:</span> security, logging, monitoring, caching, background jobs, configuration.</li>
+                            </ul>
+                            <p>
+                                We use a variety of in-house tools and proven open-source technologies to handle each layer —
+                                from database fixes to code refactoring and view conversion. Combined with our
+                                start-one-finish-one discipline, this ensures upgrades are safe, predictable, and never chaotic.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Do you work on WordPress?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            No. We focus on non-WordPress PHP systems and bespoke applications where migration risk and
+                            valuation impact are highest.
                         </p>
-                    </blockquote>
-                </figure>
+                    </details>
 
-                <div class="p-8 text-center bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md">
-                    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-4xl">
-                        Complimentary Valuation Risk Check
-                    </h1>
-                    <p class="mb-6 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-xl sm:px-16 xl:px-48">
-                        Not sure how exposed your legacy PHP system is? We’ll run an initial high-level diagnostic at no cost.
-                        You’ll get a clear picture of technical risks and how they may impact your business valuation — before committing
-                        to a full report or upgrade.
-                    </p>
-                    <a href="/contact"
-                       class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Request free risk check
-                    </a>
-                </div>
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Can you work with our in-house developers?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Yes. We embed alongside your team, bringing upgrade tooling, checklists and senior guidance.
+                            Your team retains ownership; we eliminate risk.
+                        </p>
+                    </details>
 
-                <div class="text-3xl font-bold mt-12 mb-6 text-gray-800 dark:text-white">What do our clients say?</div>
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            How do you minimise downtime?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            We ship in small slices behind feature flags, with automated smoke tests and database safety
+                            checks. No big-bang releases.
+                        </p>
+                    </details>
 
-                <figure class="flex items-start mb-6">
-                    <div class="mr-4">
-                        <img class="w-12 h-12 rounded-full border-2 border-gray-300 dark:border-gray-600"
-                             src="/images/testimoals/dave.jpeg" alt="David Nunn">
-                    </div>
-                    <div>
-                        <blockquote class="text-lg font-semibold text-gray-800 dark:text-white">
-                            <p>"I take this opportunity to thank you for the massive effort you have put into getting
-                                our project off the ground."</p>
-                        </blockquote>
-                        <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-right">
-                            <cite title="Source Title">David Nunn - Senior Product Owner - RWE Renewables</cite>
-                        </figcaption>
-                    </div>
-                </figure>
-                <hr class="h-px my-8 bg-gray-200 dark:bg-gray-700 border-0">
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            What size projects do you usually take on?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Typical engagements range from €150k to €200k, delivered in production-safe increments.
+                            Smaller audits and advisory projects are also available.
+                        </p>
+                    </details>
 
-                <figure class="flex items-start mb-6">
-                    <div class="mr-4">
-                        <img class="w-12 h-12 rounded-full border-2 border-gray-300 dark:border-gray-600"
-                             src="/images/testimoals/chris.jpeg" alt="Christopher Carus">
-                    </div>
-                    <div>
-                        <blockquote class="text-lg font-semibold text-gray-800 dark:text-white">
-                            <p>"Working with TCPX has been a phenomenal experience, so straight forward from the outset,
-                                they demonstrated exceptional expertise and professionalism."</p>
-                        </blockquote>
-                        <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-right">
-                            <cite title="Source Title">Christopher Carus - Co-Founder and CTO - Jut-so</cite>
-                        </figcaption>
-                    </div>
-                </figure>
-                <hr class="h-px my-8 bg-gray-200 dark:bg-gray-700 border-0">
-
-                <figure class="flex items-start mb-6">
-                    <div class="mr-4">
-                        <img class="w-12 h-12 rounded-full border-2 border-gray-300 dark:border-gray-600"
-                             src="https://placehold.co/300x300?text=RG" alt="Robert Grant">
-                    </div>
-                    <div>
-                        <blockquote class="text-lg font-semibold text-gray-800 dark:text-white">
-                            <p>"This was a game-changer for us. Not only streamlined our codebase but also significantly
-                                reduced our development costs. Our software runs faster, and the stability improvements
-                                have been remarkable."</p>
-                        </blockquote>
-                        <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-right">
-                            <cite title="Source Title">Robert Grant - Director - Engiserve</cite>
-                        </figcaption>
-                    </div>
-                </figure>
-                <hr class="h-px my-8 bg-gray-200 dark:bg-gray-700 border-0">
-
-                <figure class="flex items-start mb-6">
-                    <div class="mr-4">
-                        <img class="w-12 h-12 rounded-full border-2 border-gray-300 dark:border-gray-600"
-                             src="/images/testimoals/ryan.jpeg" alt="Ryan Jones">
-                    </div>
-                    <div>
-                        <blockquote class="text-lg font-semibold text-gray-800 dark:text-white">
-                            <p>"I'll admit, I was skeptical about the reality of automated refactoring at first.
-                                The idea of trusting an external with our codebase seemed risky.
-                                However, my doubts were completely dispelled. They have transformed our
-                                software."</p>
-                        </blockquote>
-                        <figcaption class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-right">
-                            <cite title="Source Title">Ryan Jones - Project Manager</cite>
-                        </figcaption>
-                    </div>
-                </figure>
-            </div>
-
-            <div class="flex flex-wrap justify-center items-center mt-12 space-x-4 md:space-x-8">
-                <hr class="w-full h-px my-8 bg-gray-200 dark:bg-gray-700 border-0">
-                <div class="flex-shrink-0 w-24 sm:w-32 md:w-40">
-                    <img class="w-full h-auto" src="/images/assosiation/rwe-logo-300.png" alt="RWE Logo">
-                </div>
-                <div class="flex-shrink-0 w-24 sm:w-32 md:w-40">
-                    <img class="w-full h-auto" src="/images/assosiation/vodafone-logo-300.png" alt="Vodafone Logo">
-                </div>
-                <div class="flex-shrink-0 w-24 sm:w-32 md:w-40">
-                    <img class="w-full h-auto" src="/images/assosiation/rector-logo-300.png" alt="Rector Logo">
-                </div>
-                <div class="flex-shrink-0 w-24 sm:w-32 md:w-40">
-                    <img class="w-full h-auto" src="/images/assosiation/townpoint-logo-300.png" alt="Townpoint Logo">
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Do you offer white-label services for agencies?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Yes. We operate as a white-label migration partner for digital agencies. You keep the client
+                            relationship, we deliver the migration.
+                        </p>
+                    </details>
                 </div>
             </div>
         </div>

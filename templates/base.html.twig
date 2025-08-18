@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="{{ asset('images/logo.png') }}"/>
@@ -20,6 +20,7 @@
     <meta name="twitter:image" content="{{ asset('images/code-carousel.png') }}">
 
     {% block stylesheets %}
+        {# TailwindCSS and Flowbite are handled by AssetMapper and should be included in the CSS output. #}
     {% endblock %}
 
     {% block javascripts %}
@@ -27,7 +28,6 @@
             {{ importmap('app') }}
         {% endblock %}
 
-        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -37,15 +37,19 @@
             gtag('js', new Date());
             gtag('config', 'G-HY1P5Z0CLJ');
         </script>
-
-        {{ encore_entry_script_tags('app') }}
     {% endblock %}
 </head>
-<body>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
 {{ include('partial/_navbar.html.twig') }}
-<div class="min-vh-80">
+
+<main class="min-h-screen">
     {% block body %}{% endblock %}
-</div>
-<div class="text-center text-muted">Copyright © {{ "now"|date("Y") }} tcpx.co.uk</div>
+</main>
+
+<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
+    Copyright © {{ "now"|date("Y") }} tcpx.co.uk
+</footer>
+
 </body>
 </html>

@@ -44,4 +44,29 @@ return [
         'version' => '5.3.3',
         'type' => 'css',
     ],
+    'flowbite' => [
+        'version' => '3.1.2',
+    ],
+    'flowbite-datepicker' => [
+        'version' => '1.3.2',
+    ],
+    'flowbite/dist/flowbite.min.css' => [
+        'version' => '3.1.2',
+        'type' => 'css',
+    ],
+    'flowbite/plugin' => [
+        'version' => '3.1.2',
+    ],
+    'mini-svg-data-uri' => [
+        'version' => '1.4.4',
+    ],
+    'tailwindcss/plugin' => [
+        'version' => '4.0.4',
+    ],
+    'tailwindcss/defaultTheme' => [
+        'version' => '4.0.4',
+    ],
+    'tailwindcss/colors' => [
+        'version' => '4.0.4',
+    ],
 ];

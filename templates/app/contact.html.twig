@@ -2,23 +2,32 @@
 
 {% block title %}Contact{% endblock %}
 {% block body %}
-    <div class="container">
-        <div class="row g-2 justify-content-center">
-            <div class="col-12 col-md-4">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center">
+            <div class="w-full md:w-4/12">
 
-               <div class="text-center mt-5">
-                   <div>Have a quick question, give us a call.</div>
-                   <div>+420 608 187 548</div>
+                <div class="text-center mt-12 p-8 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md">
+                    <p class="text-xl font-medium text-gray-900 dark:text-white mb-2">Have a quick question? Give us a
+                        call.</p>
+                    <a href="tel:+420608187548" class="text-2xl font-bold text-blue-600 dark:text-blue-400">+420 608 187
+                        548</a>
 
-                   <hr/>
+                    <hr class="my-6 border-gray-200 dark:border-gray-700"/>
 
-                   <div>want to take your time, send us an email.</div>
-                   <div>info@tcpx.co.uk</div>
+                    <p class="text-xl font-medium text-gray-900 dark:text-white mb-2">Want to take your time? Send us an
+                        email.</p>
+                    <a href="mailto:info@tcpx.co.uk" class="text-2xl font-bold text-blue-600 dark:text-blue-400">info@tcpx.co.uk</a>
 
-                   <hr/>
+                    <hr class="my-6 border-gray-200 dark:border-gray-700"/>
 
-                   <div>Company Number: OC432045</div>
-               </div>
+                    <p class="text-lg font-medium text-gray-900 dark:text-white">Company Number</p>
+                    <p class="text-md text-gray-600 dark:text-gray-400">OC432045</p>
+
+                    <hr class="my-6 border-gray-200 dark:border-gray-700"/>
+                    <p class="text-lg font-medium text-gray-900 dark:text-white">Address</p>
+                    <p class="text-md text-gray-600 dark:text-gray-400">3rd Floor Suite 3rd Floor Suite, 207 Regent
+                        Street, London, England, W1B 3HH</p>
+                </div>
 
             </div>
         </div>

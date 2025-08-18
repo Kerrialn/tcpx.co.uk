@@ -1,90 +1,126 @@
 {% extends 'base.html.twig' %}
 {% block title %}Services{% endblock %}
 {% block body %}
-    <div class="container">
-        <div>
-            <div class="row justify-content-center g-3">
-                <div class="col-12 col-md-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
 
-                    <iframe class="mb-5" width="100%" height="415"
-                            src="https://www.youtube.com/embed/_it2tI3ZkMM?si=CWosCYVfp-b5kgyX&autoplay=1&mute=1"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <!-- Page title -->
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white uppercase mb-3">
+                    Valuation Recovery Upgrades
+                </h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    Legacy PHP erodes business valuation and blocks exit options. We modernise your codebase safely and incrementally so you regain control of risk, roadmap and valuation.
+                    Think of it this way: every €1 you invest in modernisation now can return €5–10 in enterprise value at exit — by removing technical risk, unlocking growth, and proving to buyers your technology is future-ready.
+                </p>
 
-                    <div class="display-6 text-black fw-bold text-uppercase">
-                        Project Upgrade
+                <!-- Who it's for -->
+                <div class="mb-10 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Who this is for</h2>
+                    <ul class="grid grid-cols-1 gap-3">
+                        <li class="flex items-start"><span class="mt-1 mr-3 inline-flex h-6 w-6 items-center justify-center text-white text-sm">•</span>
+                            <span class="text-gray-700 dark:text-gray-300">Non‑WordPress PHP systems (Drupal, Magento, Joomla, CodeIgniter, Zend/Laminas, Symfony, Laravel) and bespoke business apps.</span>
+                        </li>
+                        <li class="flex items-start"><span class="mt-1 mr-3 inline-flex h-6 w-6 items-center justify-center text-white text-sm">•</span>
+                            <span class="text-gray-700 dark:text-gray-300">Companies preparing for due diligence, funding or exit and needing to de‑risk technology.</span>
+                        </li>
+                        <li class="flex items-start"><span class="mt-1 mr-3 inline-flex h-6 w-6 items-center justify-center text-white text-sm">•</span>
+                            <span class="text-gray-700 dark:text-gray-300">Agencies seeking a white‑label partner for complex legacy migrations.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 1: Valuation Recovery Report -->
+                <div class="mb-12">
+                    <div class="flex items-center text-3xl font-semibold text-gray-900 dark:text-white mb-2">
+                        <span class="flex-shrink-0 w-9 h-9 mr-3 text-white flex items-center justify-center">1.</span>
+                        <span>Valuation Recovery Report</span>
                     </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">A rapid, paid discovery that quantifies risk, maps your upgrade path, and ties remediation to business value.</p>
+                    <ol class="relative border-s border-gray-200 dark:border-gray-700 rounded-2xl p-4">
+                        <li class="mb-10 ms-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
+                                <svg class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </span>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">NDA & Comprehensive Analysis</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Mutual NDA + repo access; we run automated and manual checks across dependencies, deprecations, security, DB schema and performance hotspots.</p>
+                        </li>
+                        <li class="mb-10 ms-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
+                                <svg class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </span>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Valuation Recovery Report (PDF)</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Prioritised roadmap, risk register, timeline, and estimated effort tied to valuation‑readiness.</p>
+                        </li>
+                        <li class="ms-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
+                                <svg class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </span>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Fixed Fee</h3>
+                            <p class="text-gray-700 dark:text-gray-300">One‑time pre‑payment of <strong>€5,000–€8,000</strong>.</p>
+                        </li>
+                    </ol>
+                </div>
 
-                    <div class="lead my-3">A project upgrade often involves upgrading from a programming language and/or
-                        upgrading a framework version. We take the following steps to ensure a safe and consistent upgrade.
+                <!-- Service 2: Incremental Modernisation -->
+                <div class="mb-12">
+                    <div class="flex items-center text-3xl font-semibold text-gray-900 dark:text-white mb-2">
+                        <span class="flex-shrink-0 w-9 h-9 mr-3 text-white flex items-center justify-center">2.</span>
+                        <span>Incremental Modernisation</span>
                     </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">We execute the upgrade in production‑safe slices. No long‑running branches, no weekend cutovers.</p>
+                    <ol class="relative border-s border-gray-200 dark:border-gray-700 rounded-2xl p-4">
+                        <li class="mb-10 ms-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
+                                <svg class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </span>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Embedded Collaboration</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Work alongside your team for <strong>20–60 hours/week</strong>, targeting the highest ROI fixes first.</p>
+                        </li>
+                        <li class="mb-10 ms-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
+                                <svg class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </span>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Start‑One‑Finish‑One</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Create change → ship → measure → move on. No long‑running or stale branches.</p>
+                        </li>
+                        <li class="mb-10 ms-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
+                                <svg class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </span>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Cadence & Governance</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Weekly progress; monthly steering sessions to unblock and adapt the strategy.</p>
+                        </li>
+                        <li class="ms-6">
+                            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
+                                <svg class="w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </span>
+                            <h3 class="font-semibold text-gray-900 dark:text-white">Transparent Billing</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Rate <strong>€120–€150/hour</strong>, invoiced weekly or monthly.</p>
+                        </li>
+                    </ol>
+                </div>
 
-                    <div class="list-group list-group-flush mb-5">
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
-                            <div class="fs-3 d-flex justify-content-start align-items-center">
-                                <div class="mdi mdi-numeric-1-circle fs-1 me-3"></div>
-                                <div>Analysis</div>
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
-                            <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                            <div>We sign a Non-disclosure agreement (NDA) so you know your code is in safe hands.</div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
-                            <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                            <div>We run automated analysis programs to find issue in your codebase.</div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
-                            <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                            <div>We deliver, for a one-time pre-payment of 5,000 - 8,000 EUR, a PDF report of found issues
-                                and
-                                a timeline for fixing them.
-                            </div>
-                        </div>
-                    </div>
+                <!-- Partnership callout -->
+                <div class="mb-12 rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Agency Partnerships</h3>
+                    <p class="text-gray-700 dark:text-gray-300">We operate as a white‑label migration partner for digital agencies. Keep the client, offload the risk. Referral and white‑label models available.</p>
+                </div>
 
-                    <div class="list-group list-group-flush mb-5">
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
+                <!-- Pricing summary -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Pricing</h2>
+                    <ul class="divide-y divide-gray-200 dark:divide-gray-700 rounded-2xl border border-gray-200 dark:border-gray-700">
+                        <li class="py-4 px-4 text-gray-700 dark:text-gray-300"><strong>€5,000–€8,000</strong> one‑time fee for the Valuation Recovery Report</li>
+                        <li class="py-4 px-4 text-gray-700 dark:text-gray-300"><strong>€120–€150/hour</strong> for execution</li>
+                        <li class="py-4 px-4 text-gray-700 dark:text-gray-300">Typical project value: <strong>€150k–€200k</strong> delivered in production‑safe increments</li>
+                    </ul>
+                </div>
 
-                            <div class="fs-3 d-flex justify-content-start align-items-center">
-                                <div class="mdi mdi-numeric-2-circle fs-1 me-3"></div>
-                                <div>Upgrade</div>
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
-                            <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                            <div>We will work in parallel with your team for 20 - 40 hours per week
-                                implementing fixes to your codebase.
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
-                            <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                            <div>We start with the smallest and easiest issues, we work on a start one -
-                                finish one basis, this means we create a change and merge it immediately, no stale branches.
-                            </div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
-                            <div class="mdi mdi-check-circle lh-1 text-success fs-1 me-3"></div>
-                            <div>We can schedule once a month meetings to discuss progress, blockers and adapt
-                                strategy if need be.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="list-group list-group-flush mb-5">
-                        <div class="list-group-item d-flex justify-content-start align-items-center">
-                            <div class="fs-3">How much does it cost?</div>
-                        </div>
-                        <div class="list-group-item d-flex justify-content-start align-items-start">
-                            <div>
-                                <div>5,000 - 8,000 EUR one-time payment for the analysis report</div>
-                                <div>120-150 EUR per hour / invoiced weekly or monthly</div>
-                            </div>
-                        </div>
-                    </div>
-
-
+                <!-- CTA -->
+                <div class="mb-20 flex flex-col sm:flex-row gap-3">
+                    <a href="{{ path('contact') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Book a discovery call</a>
+                    <a href="{{ path('contact') }}?topic=report" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-800 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-700 border border-blue-200 dark:border-gray-700">Request the Valuation Recovery Report</a>
                 </div>
             </div>
         </div>
