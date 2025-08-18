@@ -1,0 +1,98 @@
+{
+    "app": {
+        "path": "\/assets\/app-9GMUmJo.js",
+        "type": "js"
+    },
+    "\/assets\/styles\/app.css": {
+        "path": "\/assets\/styles\/app-e5Jtn1P.css",
+        "type": "css"
+    },
+    "\/assets\/bootstrap.js": {
+        "path": "\/assets\/bootstrap-oQyLn8f.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/stimulus-bundle\/controllers.js": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/controllers-pyqa-xR.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-turbo\/turbo_controller.js": {
+        "path": "\/assets\/@symfony\/ux-turbo\/turbo_controller-zl4y2v3.js",
+        "type": "js"
+    },
+    "\/assets\/@symfony\/ux-typed\/controller.js": {
+        "path": "\/assets\/@symfony\/ux-typed\/controller-KqqaUoQ.js",
+        "type": "js"
+    },
+    "\/assets\/controllers\/hello_controller.js": {
+        "path": "\/assets\/controllers\/hello_controller-VYgvytJ.js",
+        "type": "js"
+    },
+    "@hotwired\/stimulus": {
+        "path": "\/assets\/vendor\/@hotwired\/stimulus\/stimulus.index-oUGxBTh.js",
+        "type": "js"
+    },
+    "@symfony\/stimulus-bundle": {
+        "path": "\/assets\/@symfony\/stimulus-bundle\/loader-djqeLqa.js",
+        "type": "js"
+    },
+    "@hotwired\/turbo": {
+        "path": "\/assets\/vendor\/@hotwired\/turbo\/turbo.index-gQ9E7xo.js",
+        "type": "js"
+    },
+    "typed.js": {
+        "path": "\/assets\/vendor\/typed.js\/typed.js.index-_zctSmG.js",
+        "type": "js"
+    },
+    "@stimulus-components\/clipboard": {
+        "path": "\/assets\/vendor\/@stimulus-components\/clipboard\/clipboard.index-j0OMLL_.js",
+        "type": "js"
+    },
+    "@stimulus-components\/scroll-progress": {
+        "path": "\/assets\/vendor\/@stimulus-components\/scroll-progress\/scroll-progress.index-MLoYIcU.js",
+        "type": "js"
+    },
+    "bootstrap": {
+        "path": "\/assets\/vendor\/bootstrap\/bootstrap.index-rt72SdS.js",
+        "type": "js"
+    },
+    "@popperjs\/core": {
+        "path": "\/assets\/vendor\/@popperjs\/core\/core.index-ZE0xRfu.js",
+        "type": "js"
+    },
+    "bootstrap\/dist\/css\/bootstrap.min.css": {
+        "path": "\/assets\/vendor\/bootstrap\/dist\/css\/bootstrap.min-FxLwN4-.css",
+        "type": "css"
+    },
+    "flowbite": {
+        "path": "\/assets\/vendor\/flowbite\/flowbite.index-Q2orw1n.js",
+        "type": "js"
+    },
+    "flowbite-datepicker": {
+        "path": "\/assets\/vendor\/flowbite-datepicker\/flowbite-datepicker.index-o9gVwB8.js",
+        "type": "js"
+    },
+    "flowbite\/dist\/flowbite.min.css": {
+        "path": "\/assets\/vendor\/flowbite\/dist\/flowbite.min-jce53wr.css",
+        "type": "css"
+    },
+    "flowbite\/plugin": {
+        "path": "\/assets\/vendor\/flowbite\/plugin-fQmEd4q.js",
+        "type": "js"
+    },
+    "mini-svg-data-uri": {
+        "path": "\/assets\/vendor\/mini-svg-data-uri\/mini-svg-data-uri.index-8WQk1DQ.js",
+        "type": "js"
+    },
+    "tailwindcss\/plugin": {
+        "path": "\/assets\/vendor\/tailwindcss\/plugin-Eent4J-.js",
+        "type": "js"
+    },
+    "tailwindcss\/defaultTheme": {
+        "path": "\/assets\/vendor\/tailwindcss\/defaultTheme-g5cacVq.js",
+        "type": "js"
+    },
+    "tailwindcss\/colors": {
+        "path": "\/assets\/vendor\/tailwindcss\/colors-cCy2oHm.js",
+        "type": "js"
+    }
+}
