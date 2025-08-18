@@ -47,3 +47,17 @@
         {% endif %}
     {% endblock %}
 </head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+{{ include('partial/_navbar.html.twig') }}
+
+<main class="min-h-screen">
+    {% block body %}{% endblock %}
+</main>
+
+<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
+    Copyright © {{ "now"|date("Y") }} tcpx.co.uk
+</footer>
+
+</body>
+</html>

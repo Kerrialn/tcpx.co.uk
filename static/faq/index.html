@@ -93,3 +93,151 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
                 gtag('config', 'G-HY1P5Z0CLJ');
             </script>
             </head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+<nav class="bg-white mb-12 dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo-white.png" class="h-10" alt="TCPX Logo" />
+            <div class="flex flex-col">
+                <span class="text-xl font-semibold whitespace-nowrap dark:text-white">The Coding People X</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Automated Upgrades & Migrations</span>
+            </div>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="/services" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</a>
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/services"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-white">
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <!-- Page title -->
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">
+                    Common questions about our upgrade process, methodology and collaboration.
+                </p>
+
+                <!-- FAQ list -->
+                <div class="space-y-4">
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            How do you manage all the layers — infrastructure, framework, domain logic, database, views, integrations and cross-cutting concerns?
+                        </summary>
+                        <div class="mt-2 space-y-3 text-gray-700 dark:text-gray-300">
+                            <p>
+                                We break an application down into seven layers and modernise each one in the right order. That way complexity is contained and upgrades don’t blow up downstream.
+                            </p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><span class="font-medium">Infrastructure / Environment:</span> PHP runtime, extensions, containers, servers, build pipelines.</li>
+                                <li><span class="font-medium">Framework:</span> routing, dependency injection, request/response, authentication/authorization.</li>
+                                <li><span class="font-medium">Domain Logic:</span> business rules, services, entities, events — separated so it outlives any framework.</li>
+                                <li><span class="font-medium">Database / Persistence:</span> schema, migrations, ORM mappings, raw queries. Normalised with our DB Fixer tooling.</li>
+                                <li><span class="font-medium">Presentation / Views:</span> templates, frontend assets, emails, reports. Converted incrementally (e.g. legacy PHP → Twig).</li>
+                                <li><span class="font-medium">Integrations / APIs:</span> external SDKs, internal APIs, webhooks, queues. Updated and versioned safely.</li>
+                                <li><span class="font-medium">Cross-Cutting Concerns:</span> security, logging, monitoring, caching, background jobs, configuration.</li>
+                            </ul>
+                            <p>
+                                We use a variety of in-house tools and proven open-source technologies to handle each layer —
+                                from database fixes to code refactoring and view conversion. Combined with our
+                                start-one-finish-one discipline, this ensures upgrades are safe, predictable, and never chaotic.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Do you work on WordPress?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            No. We focus on non-WordPress PHP systems and bespoke applications where migration risk and
+                            valuation impact are highest.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Can you work with our in-house developers?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Yes. We embed alongside your team, bringing upgrade tooling, checklists and senior guidance.
+                            Your team retains ownership; we eliminate risk.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            How do you minimise downtime?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            We ship in small slices behind feature flags, with automated smoke tests and database safety
+                            checks. No big-bang releases.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            What size projects do you usually take on?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Typical engagements range from €150k to €200k, delivered in production-safe increments.
+                            Smaller audits and advisory projects are also available.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            Do you offer white-label services for agencies?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Yes. We operate as a white-label migration partner for digital agencies. You keep the client
+                            relationship, we deliver the migration.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
+    Copyright © 2025 tcpx.co.uk
+</footer>
+
+</body>
+</html>
