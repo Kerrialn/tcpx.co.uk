@@ -2,25 +2,29 @@
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="{{ asset('images/logo.png') }}"/>
-    <title>{% block title %}TCPX{% endblock %}</title>
+    <link rel="icon" href="{{ asset('images/logo-white.png') }}"/>
+    <title>{% block title %}TCPX – Legacy PHP Migration & Valuation Recovery{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <meta name="description"
-          content="Upgrade your PHP applications with TCPX. We specialize in PHP version upgrades, framework migrations, and database transitions to ensure security, performance, and maintainability. Contact us today!">
+          content="Legacy PHP erodes business valuation and blocks exit options. TCPX modernises your codebase safely and incrementally so you regain control of risk, roadmap and valuation. Every €1 invested in modernisation today can return multiples at exit.">
     <meta name="keywords"
-          content="PHP upgrade services, PHP migration experts, PHP version update, PHP version migration support, legacy PHP, Symfony upgrade, Laravel migration, PHP 8, PHP support, framework upgrade, PHP development">
+          content="legacy PHP upgrade, PHP migration experts, PHP 8 upgrade, Symfony migration, Laravel migration, CodeIgniter to Symfony, Zend to Laminas, Drupal 7 migration, Magento 1 to 2 upgrade, database fixer, valuation recovery, technical due diligence">
     <meta name="author" content="TCPX">
-    <meta property="og:title" content="PHP Upgrades & Migrations – TCPX">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="TCPX – Valuation Recovery through Legacy PHP Upgrades">
     <meta property="og:description"
-          content="Upgrade your PHP applications with our services. We ensure smooth transitions, better performance, and long-term maintainability.">
+          content="We help companies protect and grow business value by modernising legacy PHP systems: PHP version upgrades, framework migrations, database normalisation and view conversion.">
     <meta property="og:url" content="https://tcpx.co.uk/">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{ asset('images/code-carousel.png') }}">
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PHP Upgrades & Migrations – TCPX">
+    <meta name="twitter:title" content="TCPX – Legacy PHP Upgrades for Business Valuation Recovery">
     <meta name="twitter:description"
-          content="We specialize in PHP version upgrades and framework migrations to keep your applications secure and optimized.">
+          content="Legacy code kills business valuation. TCPX modernises PHP apps with a multi-layer approach – from DB to framework to views – so you can exit with confidence.">
     <meta name="twitter:image" content="{{ asset('images/code-carousel.png') }}">
 
     {% block stylesheets %}
@@ -36,28 +40,10 @@
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>
             <script>
                 window.dataLayer = window.dataLayer || [];
-
-                function gtag() {
-                    dataLayer.push(arguments);
-                }
-
+                function gtag() { dataLayer.push(arguments); }
                 gtag('js', new Date());
                 gtag('config', 'G-HY1P5Z0CLJ');
             </script>
         {% endif %}
     {% endblock %}
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
-
-{{ include('partial/_navbar.html.twig') }}
-
-<main class="min-h-screen">
-    {% block body %}{% endblock %}
-</main>
-
-<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
-    Copyright © {{ "now"|date("Y") }} tcpx.co.uk
-</footer>
-
-</body>
-</html>
