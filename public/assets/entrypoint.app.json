@@ -1,0 +1,15 @@
+[
+    "flowbite",
+    "\/assets\/styles\/app.css",
+    "\/assets\/bootstrap.js",
+    "@symfony\/stimulus-bundle",
+    "@stimulus-components\/clipboard",
+    "@stimulus-components\/scroll-progress",
+    "@hotwired\/stimulus",
+    "\/assets\/@symfony\/stimulus-bundle\/controllers.js",
+    "\/assets\/@symfony\/ux-turbo\/turbo_controller.js",
+    "\/assets\/@symfony\/ux-typed\/controller.js",
+    "\/assets\/controllers\/hello_controller.js",
+    "@hotwired\/turbo",
+    "typed.js"
+]
