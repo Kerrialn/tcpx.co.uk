@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/logo-white.png"/>
+    <title>Why You Should Upgrade Your PHP System Before Reducing Your Dev Team | TCPX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="Reducing development headcount to cut costs is tempting — but without a solid technical foundation, the remaining team will struggle. Here&#039;s why upgrading first makes the economics work.">
+    <meta name="keywords"
+          content="PHP codebase upgrade, reduce development costs, PHP modernisation ROI, AI developer productivity, legacy PHP cost, PHP technical debt ROI">
+    <meta name="author" content="TCPX">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Why You Should Upgrade Your PHP System Before Reducing Your Dev Team">
+    <meta property="og:description"
+          content="Reducing development headcount to cut costs is tempting — but without a solid technical foundation, the remaining team will struggle. Here&#039;s why upgrading first makes the economics work.">
+    <meta property="og:url" content="https://tcpx.co.uk/blog/cto-guide-upgrading-php-before-reducing-dev-team">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/code-carousel.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why You Should Upgrade Your PHP System Before Reducing Your Dev Team">
+    <meta name="twitter:description"
+          content="Reducing development headcount to cut costs is tempting — but without a solid technical foundation, the remaining team will struggle. Here&#039;s why upgrading first makes the economics work.">
+    <meta name="twitter:image" content="/images/code-carousel.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TCPX",
+      "url": "https://tcpx.co.uk",
+      "logo": "https://tcpx.co.uk/images/logo-white.png",
+      "description": "PHP consultancy specialising in systems architecture, automated refactoring with Rector, and database layer modernisation.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3rd Floor Suite, 207 Regent Street",
+        "addressLocality": "London",
+        "postalCode": "W1B 3HH",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+420608187548",
+        "email": "info@tcpx.co.uk",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why You Should Upgrade Your PHP System Before Reducing Your Dev Team",
+  "description": "Reducing development headcount to cut costs is tempting \u2014 but without a solid technical foundation, the remaining team will struggle. Here's why upgrading first makes the economics work.",
+  "datePublished": "2024-05-24",
+  "url": "https://tcpx.co.uk/blog/cto-guide-upgrading-php-before-reducing-dev-team",
+  "author": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  }
+}
+</script>
+
+                    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css">
+
+                            
+<link rel="stylesheet" href="/assets/styles/app-AbbTHjh.css">
+<script type="importmap" data-turbo-track="reload">
+{
+    "imports": {
+        "app": "/assets/app-9GMUmJo.js",
+        "flowbite": "/assets/vendor/flowbite/flowbite.index-Q2orw1n.js",
+        "/assets/styles/app.css": "data:application/javascript,",
+        "/assets/bootstrap.js": "/assets/bootstrap-oQyLn8f.js",
+        "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-djqeLqa.js",
+        "@stimulus-components/clipboard": "/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js",
+        "@stimulus-components/scroll-progress": "/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js",
+        "@hotwired/stimulus": "/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js",
+        "/assets/@symfony/ux-turbo/turbo_controller.js": "/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js",
+        "/assets/@symfony/ux-typed/controller.js": "/assets/@symfony/ux-typed/controller-KqqaUoQ.js",
+        "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-VYgvytJ.js",
+        "@hotwired/turbo": "/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js",
+        "typed.js": "/assets/vendor/typed.js/typed.js.index-_zctSmG.js",
+        "bootstrap": "/assets/vendor/bootstrap/bootstrap.index-rt72SdS.js",
+        "@popperjs/core": "/assets/vendor/@popperjs/core/core.index-ZE0xRfu.js",
+        "bootstrap/dist/css/bootstrap.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fbootstrap%2Fdist%2Fcss%2Fbootstrap.min-FxLwN4-.css%22%7D%29%29",
+        "flowbite-datepicker": "/assets/vendor/flowbite-datepicker/flowbite-datepicker.index-o9gVwB8.js",
+        "flowbite/dist/flowbite.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fflowbite%2Fdist%2Fflowbite.min-jce53wr.css%22%7D%29%29",
+        "flowbite/plugin": "/assets/vendor/flowbite/plugin-fQmEd4q.js",
+        "mini-svg-data-uri": "/assets/vendor/mini-svg-data-uri/mini-svg-data-uri.index-8WQk1DQ.js",
+        "tailwindcss/plugin": "/assets/vendor/tailwindcss/plugin-Eent4J-.js",
+        "tailwindcss/defaultTheme": "/assets/vendor/tailwindcss/defaultTheme-g5cacVq.js",
+        "tailwindcss/colors": "/assets/vendor/tailwindcss/colors-cCy2oHm.js"
+    }
+}
+</script><script async data-turbo-track="reload">
+if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (function () {
+    const script = document.createElement('script');
+    script.src = 'https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js';
+    script.setAttribute('async', 'async');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('integrity', 'sha384-ie1x72Xck445i0j4SlNJ5W5iGeL3Dpa0zD48MZopgWsjNB/lt60SuG1iduZGNnJn');
+    script.setAttribute('data-turbo-track', 'reload');
+    document.head.appendChild(script);
+})();
+</script>
+<link rel="modulepreload" href="/assets/app-9GMUmJo.js">
+<link rel="modulepreload" href="/assets/vendor/flowbite/flowbite.index-Q2orw1n.js">
+<link rel="modulepreload" href="/assets/bootstrap-oQyLn8f.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/loader-djqeLqa.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-typed/controller-KqqaUoQ.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-VYgvytJ.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js">
+<link rel="modulepreload" href="/assets/vendor/typed.js/typed.js.index-_zctSmG.js">
+<script type="module" data-turbo-track="reload">import 'app';</script>
+        
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HY1P5Z0CLJ');
+            </script>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+<nav class="bg-white mb-12 dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo-white.png" class="h-10" alt="TCPX Logo" />
+            <div class="flex flex-col">
+                <span class="text-xl font-semibold whitespace-nowrap dark:text-white">The Coding People X</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Automated Upgrades & Migrations</span>
+            </div>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="/services" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</a>
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/services"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-white">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-8">
+                    <a href="/blog" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+                    <span class="mx-2">›</span>
+                    <span class="text-gray-700 dark:text-gray-300">Why You Should Upgrade Your PHP System Before Reducing Your Dev Team</span>
+                </nav>
+
+                <div class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-3 uppercase tracking-wide">2024-05-24</div>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">Why You Should Upgrade Your PHP System Before Reducing Your Dev Team</h1>
+
+                <p class="text-lg text-gray-500 dark:text-gray-400 mb-10 border-b border-gray-200 dark:border-gray-700 pb-10">Reducing development headcount to cut costs is tempting — but without a solid technical foundation, the remaining team will struggle. Here&#039;s why upgrading first makes the economics work.</p>
+
+                <div class="article-body">
+                    <p>The pressure to reduce development costs is real. Post-COVID operational costs, energy price spikes, and a slump in growth markets have all tightened budgets. And now, with AI tooling advancing rapidly, there's a tempting case for cutting developer headcount.</p>
+<p>The logic seems sound: AI makes developers more productive, so fewer developers can achieve the same output. Reduce the team, maintain delivery pace, protect margins.</p>
+<p>This works — but only if your technical foundation supports it.</p>
+<h2>The problem with applying this to legacy systems</h2>
+<p>Let's say you have a team of five developers, and you slim down to two. That's a 60% reduction in headcount. For the remaining two to simply maintain the <em>status quo</em>, each would need to be 150% more productive using AI tools. And the goal isn't to maintain the status quo — it's to improve on it.</p>
+<p>There's a harder problem underneath this: AI has real limitations with complex, disorganised legacy systems. AI loses context quickly, and the messier, more inconsistent, and more buggy your codebase, the less useful it becomes. It gets lost in the same rabbit holes a junior developer would.</p>
+<p>On the other hand, if you have a well-structured, SOLID-compliant, standards-enforced codebase, AI can help resolve problems significantly more effectively — because the scope and context is small and clear.</p>
+<h2>What actually happens when you reduce headcount too early</h2>
+<p>Reducing your team before the system is ready leads to:</p>
+<ul>
+<li>High developer turnover — few developers want to work on a difficult legacy codebase under pressure with a small team</li>
+<li>Low morale and burnout for those who stay</li>
+<li>Excessive time spent on crashes and bugs rather than progress</li>
+<li>Progressively slower delivery as technical debt compounds faster than it's addressed</li>
+</ul>
+<h2>The right sequence</h2>
+<p>Spend six months upgrading your project <em>before</em> reducing headcount. Use that time to:</p>
+<ol>
+<li><strong>Assess the current state</strong> — run <a href="https://github.com/Kerrialn/migrator">Migrator</a> to produce a structured analysis of upgrade complexity and technical risk</li>
+<li><strong>Automate the quality floor</strong> — integrate PHPStan, Rector, and ECS into CI so every PR is gate-checked for quality</li>
+<li><strong>Migrate database access</strong> — use <a href="https://github.com/Kerrialn/indoctrinate">Indoctrinate</a> to systematically convert raw queries and string-based SQL to type-safe Doctrine ORM</li>
+<li><strong>Remove dead code and upgrade PHP</strong> — use Rector's dead code and PHP version sets to modernise incrementally</li>
+</ol>
+<p>After this investment, you will have:</p>
+<ul>
+<li>A codebase small enough for AI tools to reason about effectively</li>
+<li>A quality enforcement pipeline that makes it hard to introduce new debt</li>
+<li>Fewer moving parts overall — meaning less maintenance burden per developer</li>
+<li>A system that developers actually want to work on, making retention and hiring easier</li>
+</ul>
+<h2>The economics</h2>
+<p>The cost of six months of focused technical improvement is typically a fraction of the cost of 12+ months of high turnover, productivity losses, and technical debt accumulation.</p>
+<p>Reducing your development team is feasible and sometimes the right call. But plan, prepare, and then proceed — in that order.</p>
+                </div>
+
+                <hr class="my-12 border-gray-200 dark:border-gray-700">
+
+                <div class="rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Need help with this?</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">TCPX specialises in PHP systems architecture, automated refactoring with Rector, and database layer modernisation. Get in touch to discuss your project.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="/contact" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Get in touch</a>
+                        <a href="/blog" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-600 border border-blue-200 dark:border-gray-600">More articles</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
+    Copyright © 2026 tcpx.co.uk
+</footer>
+
+</body>
+</html>

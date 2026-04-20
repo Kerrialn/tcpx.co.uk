@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/logo-white.png"/>
+    <title>PHP Legacy Codebase: A Management Guide | TCPX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="If your PHP application shows signs of legacy decay — old PHP versions, poor documentation, endless maintenance — here is a practical framework for breaking the cycle and building toward something maintainable.">
+    <meta name="keywords"
+          content="PHP legacy codebase, legacy PHP management, PHP technical debt, legacy code refactoring, PHP consultancy, modernise PHP application">
+    <meta name="author" content="TCPX">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PHP Legacy Codebase: A Management Guide">
+    <meta property="og:description"
+          content="If your PHP application shows signs of legacy decay — old PHP versions, poor documentation, endless maintenance — here is a practical framework for breaking the cycle and building toward something maintainable.">
+    <meta property="og:url" content="https://tcpx.co.uk/blog/php-legacy-codebase-management-guide">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/code-carousel.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PHP Legacy Codebase: A Management Guide">
+    <meta name="twitter:description"
+          content="If your PHP application shows signs of legacy decay — old PHP versions, poor documentation, endless maintenance — here is a practical framework for breaking the cycle and building toward something maintainable.">
+    <meta name="twitter:image" content="/images/code-carousel.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TCPX",
+      "url": "https://tcpx.co.uk",
+      "logo": "https://tcpx.co.uk/images/logo-white.png",
+      "description": "PHP consultancy specialising in systems architecture, automated refactoring with Rector, and database layer modernisation.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3rd Floor Suite, 207 Regent Street",
+        "addressLocality": "London",
+        "postalCode": "W1B 3HH",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+420608187548",
+        "email": "info@tcpx.co.uk",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "PHP Legacy Codebase: A Management Guide",
+  "description": "If your PHP application shows signs of legacy decay \u2014 old PHP versions, poor documentation, endless maintenance \u2014 here is a practical framework for breaking the cycle and building toward something maintainable.",
+  "datePublished": "2023-07-24",
+  "url": "https://tcpx.co.uk/blog/php-legacy-codebase-management-guide",
+  "author": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  }
+}
+</script>
+
+                    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css">
+
+                            
+<link rel="stylesheet" href="/assets/styles/app-AbbTHjh.css">
+<script type="importmap" data-turbo-track="reload">
+{
+    "imports": {
+        "app": "/assets/app-9GMUmJo.js",
+        "flowbite": "/assets/vendor/flowbite/flowbite.index-Q2orw1n.js",
+        "/assets/styles/app.css": "data:application/javascript,",
+        "/assets/bootstrap.js": "/assets/bootstrap-oQyLn8f.js",
+        "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-djqeLqa.js",
+        "@stimulus-components/clipboard": "/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js",
+        "@stimulus-components/scroll-progress": "/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js",
+        "@hotwired/stimulus": "/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js",
+        "/assets/@symfony/ux-turbo/turbo_controller.js": "/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js",
+        "/assets/@symfony/ux-typed/controller.js": "/assets/@symfony/ux-typed/controller-KqqaUoQ.js",
+        "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-VYgvytJ.js",
+        "@hotwired/turbo": "/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js",
+        "typed.js": "/assets/vendor/typed.js/typed.js.index-_zctSmG.js",
+        "bootstrap": "/assets/vendor/bootstrap/bootstrap.index-rt72SdS.js",
+        "@popperjs/core": "/assets/vendor/@popperjs/core/core.index-ZE0xRfu.js",
+        "bootstrap/dist/css/bootstrap.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fbootstrap%2Fdist%2Fcss%2Fbootstrap.min-FxLwN4-.css%22%7D%29%29",
+        "flowbite-datepicker": "/assets/vendor/flowbite-datepicker/flowbite-datepicker.index-o9gVwB8.js",
+        "flowbite/dist/flowbite.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fflowbite%2Fdist%2Fflowbite.min-jce53wr.css%22%7D%29%29",
+        "flowbite/plugin": "/assets/vendor/flowbite/plugin-fQmEd4q.js",
+        "mini-svg-data-uri": "/assets/vendor/mini-svg-data-uri/mini-svg-data-uri.index-8WQk1DQ.js",
+        "tailwindcss/plugin": "/assets/vendor/tailwindcss/plugin-Eent4J-.js",
+        "tailwindcss/defaultTheme": "/assets/vendor/tailwindcss/defaultTheme-g5cacVq.js",
+        "tailwindcss/colors": "/assets/vendor/tailwindcss/colors-cCy2oHm.js"
+    }
+}
+</script><script async data-turbo-track="reload">
+if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (function () {
+    const script = document.createElement('script');
+    script.src = 'https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js';
+    script.setAttribute('async', 'async');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('integrity', 'sha384-ie1x72Xck445i0j4SlNJ5W5iGeL3Dpa0zD48MZopgWsjNB/lt60SuG1iduZGNnJn');
+    script.setAttribute('data-turbo-track', 'reload');
+    document.head.appendChild(script);
+})();
+</script>
+<link rel="modulepreload" href="/assets/app-9GMUmJo.js">
+<link rel="modulepreload" href="/assets/vendor/flowbite/flowbite.index-Q2orw1n.js">
+<link rel="modulepreload" href="/assets/bootstrap-oQyLn8f.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/loader-djqeLqa.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-typed/controller-KqqaUoQ.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-VYgvytJ.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js">
+<link rel="modulepreload" href="/assets/vendor/typed.js/typed.js.index-_zctSmG.js">
+<script type="module" data-turbo-track="reload">import 'app';</script>
+        
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HY1P5Z0CLJ');
+            </script>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+<nav class="bg-white mb-12 dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo-white.png" class="h-10" alt="TCPX Logo" />
+            <div class="flex flex-col">
+                <span class="text-xl font-semibold whitespace-nowrap dark:text-white">The Coding People X</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Automated Upgrades & Migrations</span>
+            </div>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="/services" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</a>
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/services"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-white">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-8">
+                    <a href="/blog" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+                    <span class="mx-2">›</span>
+                    <span class="text-gray-700 dark:text-gray-300">PHP Legacy Codebase: A Management Guide</span>
+                </nav>
+
+                <div class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-3 uppercase tracking-wide">2023-07-24</div>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">PHP Legacy Codebase: A Management Guide</h1>
+
+                <p class="text-lg text-gray-500 dark:text-gray-400 mb-10 border-b border-gray-200 dark:border-gray-700 pb-10">If your PHP application shows signs of legacy decay — old PHP versions, poor documentation, endless maintenance — here is a practical framework for breaking the cycle and building toward something maintainable.</p>
+
+                <div class="article-body">
+                    <p>Does your company have a legacy PHP codebase? If you recognise any of the following, you probably do:</p>
+<ol>
+<li>PHP version 5.3 to 7.0</li>
+<li>Lack of documentation and/or application knowledge</li>
+<li>Struggle to keep the application alive — poor performance, constant firefighting</li>
+<li>No matter how much work is done, nothing feels like it moves forward</li>
+<li>There is one person on the tech team who is the &quot;source of all knowledge&quot;</li>
+</ol>
+<p>You may be convinced the problem stems from your tech team focusing on the wrong things and fixing obscure issues you don't fully understand. It's frustrating. But what you're experiencing is the legacy trap — and it's a structural problem, not a personnel one.</p>
+<h2>The central dilemma</h2>
+<p>You're facing a choice: split the team and build something new from scratch, or focus the whole team on refactoring what already exists. Either path means a slowdown or halt in feature delivery. Meanwhile, errors keep coming in, targets are being missed, and the pressure mounts.</p>
+<p>This is exactly the kind of situation where having an outside perspective helps — not to replace your team, but to give them a clear, structured path forward.</p>
+<h2>Breaking the cycle: three steps</h2>
+<h3>Step 1: Codebase analysis</h3>
+<p>Before any decisions are made, you need to understand what you're actually dealing with. Gut feel isn't good enough here — you need data.</p>
+<p>Run <a href="https://github.com/Kerrialn/migrator">Migrator</a> to get a structured picture of your codebase's upgrade complexity:</p>
+<pre><code class="language-bash">composer require kerrialn/migrator
+vendor/bin/migrator analyse</code></pre>
+<p>This produces a report showing PHP compatibility issues, dependency state, and upgrade complexity. It frames the discussion: either the application is beyond saving (in which case the decision to rebuild is now data-driven, not emotional) or it's salvageable, with a clear list of what needs to be done.</p>
+<h3>Step 2: Set a clear goal</h3>
+<p>Based on the analysis, set a specific and achievable objective with smaller milestones leading toward it. The goal might be to upgrade to a modern PHP version, introduce automated refactoring tooling, migrate from raw SQL to an ORM, or some combination. Each milestone should be independently deployable and measurable.</p>
+<h3>Step 3: Break the cycle</h3>
+<p>There's a reason the application got into this state. You can't fix a legacy codebase without changing some behaviours. This is usually the most difficult step, because change is hard — especially in teams that have spent years in survival mode.</p>
+<p>Breaking the cycle means:</p>
+<ul>
+<li>Setting up automated quality checks (PHPStan, Rector, ECS) and enforcing them in CI</li>
+<li>Establishing code review processes that actually gate on quality</li>
+<li>Removing the bottlenecks that make knowledge tribal</li>
+</ul>
+<h2>The &quot;oracle&quot; problem</h2>
+<p>In most legacy situations, there is one developer who holds disproportionate knowledge. This creates a dangerous dependency — for the business, because any disruption to that person disrupts everything; and for the team, because knowledge that lives in one person's head isn't in the codebase where it belongs.</p>
+<p>As the incremental improvements mount up and the application becomes more structured and documented, you'll notice a shift. Knowledge that used to be trapped in one person starts living in the code, in the tests, in the tooling. Other team members can contribute and engage because they can understand what's there.</p>
+<p>That shift — from tribal knowledge to structural knowledge — is the most valuable outcome of a well-managed legacy migration.</p>
+<h2>Migration experience matters</h2>
+<p>Legacy migration experience saves time and money in ways that are genuinely difficult to quantify until you've been through a bad migration. Knowing which rabbit holes to avoid, which improvements compound, and which approaches make the next iteration faster — that's not in any documentation.</p>
+<p>The goal is always the same: a codebase that any competent developer can understand, extend, and maintain. Start with the smallest possible improvement, merge it, and repeat.</p>
+                </div>
+
+                <hr class="my-12 border-gray-200 dark:border-gray-700">
+
+                <div class="rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Need help with this?</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">TCPX specialises in PHP systems architecture, automated refactoring with Rector, and database layer modernisation. Get in touch to discuss your project.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="/contact" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Get in touch</a>
+                        <a href="/blog" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-600 border border-blue-200 dark:border-gray-600">More articles</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
+    Copyright © 2026 tcpx.co.uk
+</footer>
+
+</body>
+</html>

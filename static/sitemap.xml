@@ -1,51 +1,99 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
-            <loc>https://tcpx.co.uk/</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>            <priority>0</priority>            <changefreq>monthly</changefreq>
+            <loc>http://localhost/</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>            <priority>0</priority>            <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/services</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/services</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/services/php-systems-architecture</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/services/php-systems-architecture</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/services/automated-php-refactoring</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/services/automated-php-refactoring</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/services/database-refactoring</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/services/database-refactoring</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/faq</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/faq</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/contact</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/contact</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/blog</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/blog</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/blog/writing-custom-rector-rules-for-legacy-codebases</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/blog/writing-custom-rector-rules-for-legacy-codebases</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/blog/php-systems-architecture-separating-domain-from-infrastructure</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/blog/php-systems-architecture-separating-domain-from-infrastructure</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/blog/automated-database-refactoring-raw-queries-to-doctrine</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/blog/automated-database-refactoring-raw-queries-to-doctrine</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>https://tcpx.co.uk/blog/how-to-upgrade-php-7-to-8-with-rector</loc>
-            <lastmod>2026-04-20T07:17:35+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/blog/how-to-upgrade-php-7-to-8-with-rector</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/removing-service-container-from-console-applications</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/the-ultimate-php-upgrade-guide</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/managing-php-migration-risks-for-smes</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/making-the-business-case-for-php-refactoring</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/symfony-asset-mapper-over-encore</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/cto-guide-upgrading-php-before-reducing-dev-team</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/breaking-free-from-tech-team-dependency</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/zero-legacy-approach-simplifying-php-architecture</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/php-coding-standards-rector-phpstan-ecs</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/doctrine-arraycollection-over-arrays</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/doctrine-orm-querybuilder-reusable-queries</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
+        </url>
+            <url>
+            <loc>http://localhost/blog/php-legacy-codebase-management-guide</loc>
+            <lastmod>2026-04-20T07:57:15+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
     </urlset>
