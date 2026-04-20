@@ -1,5 +1,50 @@
 {% extends 'base.html.twig' %}
-{% block title %}Services{% endblock %}
+
+{% block title %}PHP Consultancy Services – Architecture, Rector Refactoring & DB Modernisation | TCPX{% endblock %}
+
+{% block meta_description %}PHP consultancy services: systems architecture review, automated refactoring with Rector, database layer modernisation, and full legacy PHP upgrade engagements. Fixed-fee discovery from €5,000.{% endblock %}
+{% block meta_keywords %}PHP consultancy services, PHP systems architecture review, Rector automated refactoring, database layer modernisation, legacy PHP upgrade service, PHP 8 migration service{% endblock %}
+
+{% block og_title %}PHP Consultancy Services – TCPX{% endblock %}
+{% block og_description %}Systems architecture, Rector-powered automated refactoring, and database modernisation. Fixed-fee discovery report from €5,000. Incremental execution at €120–€150/hr.{% endblock %}
+{% block og_url %}https://tcpx.co.uk/services{% endblock %}
+{% block twitter_title %}PHP Consultancy Services – TCPX{% endblock %}
+{% block twitter_description %}Systems architecture, Rector-powered automated refactoring, and database modernisation. Fixed-fee discovery report from €5,000.{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "PHP Consultancy",
+  "provider": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "name": "PHP Systems Architecture & Automated Refactoring",
+  "description": "Expert PHP consultancy covering systems architecture design, automated code refactoring with Rector, database layer modernisation, and full legacy PHP upgrade engagements.",
+  "url": "https://tcpx.co.uk/services",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Valuation Recovery Report",
+      "description": "Rapid paid discovery: automated and manual analysis, prioritised roadmap, and risk register tied to business value.",
+      "priceRange": "€5,000–€8,000",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Incremental Modernisation",
+      "description": "Embedded execution in production-safe slices alongside your team. Start-one-finish-one discipline.",
+      "priceRange": "€120–€150/hour",
+      "priceCurrency": "EUR"
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block body %}
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-center">
@@ -13,6 +58,22 @@
                     Legacy PHP erodes business valuation and blocks exit options. We modernise your codebase safely and incrementally so you regain control of risk, roadmap and valuation.
                     Think of it this way: every €1 you invest in modernisation now can return €5–10 in enterprise value at exit — by removing technical risk, unlocking growth, and proving to buyers your technology is future-ready.
                 </p>
+
+                <!-- Service specialisms -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                    <a href="{{ path('service_php_systems_architecture') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                        <div class="font-semibold text-gray-900 dark:text-white mb-1">PHP Systems Architecture</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Clean layered structures, domain logic separation, and framework-agnostic design.</div>
+                    </a>
+                    <a href="{{ path('service_automated_php_refactoring') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                        <div class="font-semibold text-gray-900 dark:text-white mb-1">Automated Refactoring with Rector</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">PHP 8 upgrades, framework migrations, and custom AST rules applied in auditable batches.</div>
+                    </a>
+                    <a href="{{ path('service_database_refactoring') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                        <div class="font-semibold text-gray-900 dark:text-white mb-1">Database Layer Refactoring</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">Schema normalisation, ORM migration, and Doctrine synchronisation with Indoctrinate for safe incremental modernisation.</div>
+                    </a>
+                </div>
 
                 <!-- Who it's for -->
                 <div class="mb-10 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">

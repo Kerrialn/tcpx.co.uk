@@ -26,6 +26,13 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ path('blog_index') }}"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       {{ app.request.get('_route') starts with 'blog' ? 'text-white' : 'text-gray-500 dark:text-gray-400' }}">
+                        Blog
+                    </a>
+                </li>
+                <li>
                     <a href="{{ path('faq') }}"
                        class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
                        {{ app.request.get('_route') == 'faq' ? 'text-white' : 'text-gray-500 dark:text-gray-400' }}">

@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Automated PHP Refactoring with Rector – TCPX{% endblock %}
+
+{% block meta_description %}Automated PHP refactoring using Rector: PHP 8 upgrades, framework migrations, custom AST rules, and large-scale code transformations applied safely and auditably to your codebase.{% endblock %}
+{% block meta_keywords %}automated PHP refactoring, Rector PHP, Rector PHP upgrade, PHP 8 automated migration, custom Rector rules, AST PHP refactoring, PHP code transformation, PHP 7 to 8 upgrade{% endblock %}
+
+{% block og_title %}Automated PHP Refactoring with Rector – TCPX{% endblock %}
+{% block og_description %}Rector-powered automated PHP refactoring: PHP 8 upgrades, custom AST rules, and large-scale code transformations applied safely and auditably.{% endblock %}
+{% block og_url %}https://tcpx.co.uk/services/automated-php-refactoring{% endblock %}
+{% block twitter_title %}Automated PHP Refactoring with Rector – TCPX{% endblock %}
+{% block twitter_description %}Rector-powered automated PHP refactoring: PHP 8 upgrades, custom AST rules, and large-scale code transformations applied safely.{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Automated PHP Refactoring",
+  "provider": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "name": "Automated PHP Refactoring with Rector",
+  "description": "Rector-powered automated PHP refactoring service: PHP 7 to 8 upgrades, framework migrations, custom AST rules, and auditable large-scale code transformations.",
+  "url": "https://tcpx.co.uk/services/automated-php-refactoring",
+  "areaServed": "GB"
+}
+</script>
+{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <a href="{{ path('services') }}" class="hover:text-blue-600 dark:hover:text-blue-400">Services</a>
+                    <span class="mx-2">›</span>
+                    <span>Automated PHP Refactoring</span>
+                </nav>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Automated PHP Refactoring with Rector</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    Manual refactoring of a large PHP codebase is slow, error-prone, and expensive. Rector transforms your code automatically using Abstract Syntax Tree (AST) analysis — applying hundreds or thousands of changes in a single auditable pass, with every transformation reviewable before it merges. We use Rector as the engine of our automated refactoring service, and we write custom rules when off-the-shelf sets don't cover your specific patterns.
+                </p>
+
+                <!-- What is Rector -->
+                <div class="mb-12 rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">What is Rector?</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3">Rector is an open-source PHP tool that parses your code into an AST (Abstract Syntax Tree), applies transformation rules, and writes the modified code back. Unlike search-and-replace, it understands types, scopes, and context — so transformations are semantically correct, not just textual.</p>
+                    <p class="text-gray-700 dark:text-gray-300">Rector ships with rule sets for PHP version upgrades, Symfony migrations, Laravel migrations, PHPUnit upgrades, dead code removal, type declarations, and more. When those don't match your codebase, we write custom rules.</p>
+                </div>
+
+                <!-- What we do -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">How we run Rector refactoring engagements</h2>
+                    <div class="space-y-6">
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">1. Codebase analysis</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We run static analysis tools alongside Rector's dry-run mode to map your codebase: which patterns are present, how many occurrences, what custom rules will be required, and what the risk profile is for each transformation category.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">2. Rule set configuration</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We configure Rector rule sets appropriate to your target PHP version and framework, then write additional custom rules for patterns specific to your codebase — deprecated internal APIs, bespoke helper functions, proprietary patterns. Custom rules are tested against fixtures before being applied.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">3. Batched, auditable runs</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We don't apply everything at once. Transformations are batched by rule type and applied as separate pull requests: each diff is reviewable, each change has a clear cause, and the test suite gates every batch. Nothing merges that breaks a test.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">4. CI integration</h3>
+                            <p class="text-gray-700 dark:text-blue-300">We wire Rector into your CI pipeline so it runs on every pull request, preventing regression to deprecated patterns as your team continues shipping features during the migration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common use cases -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Common Rector refactoring use cases</h2>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>PHP 7.x → PHP 8.0 / 8.1 / 8.2 / 8.3 syntax upgrades</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Adding typed properties and return type declarations</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Symfony 3/4/5 → Symfony 6/7 migrations</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Replacing deprecated functions and removed APIs</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Dead code elimination across large codebases</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Migrating from one ORM to another (e.g. Propel → Doctrine)</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Replacing custom service location with DI</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Custom rules for proprietary in-house patterns</li>
+                    </ul>
+                </div>
+
+                <!-- What you get -->
+                <div class="mb-12 rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">What you get at the end</h2>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>A fully upgraded codebase with all transformations applied and tested</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Custom Rector rules you can reuse and extend</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Rector integrated into your CI pipeline</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Documentation of transformations applied and why</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Handover to your team with guidance on maintaining the Rector config</li>
+                    </ul>
+                </div>
+
+                <!-- Related services -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Related services</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <a href="{{ path('service_php_systems_architecture') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                            <div class="font-semibold text-gray-900 dark:text-white mb-1">PHP Systems Architecture</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Define the target architecture before running automated refactoring — so transformations land in the right structure.</div>
+                        </a>
+                        <a href="{{ path('service_database_refactoring') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                            <div class="font-semibold text-gray-900 dark:text-white mb-1">Database Layer Refactoring</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Pair Rector-based code refactoring with DB layer modernisation for a complete application upgrade.</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="mb-20 flex flex-col sm:flex-row gap-3">
+                    <a href="{{ path('contact') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Discuss your Rector project</a>
+                    <a href="{{ path('services') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-800 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-700 border border-blue-200 dark:border-gray-700">See all services</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/logo-white.png"/>
+    <title>PHP Systems Architecture: Separating Domain Logic from Infrastructure | TCPX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="Why PHP systems that mix domain logic with infrastructure code become impossible to upgrade — and how to separate them using ports and adapters, repository patterns, domain services, and purpose-built tools like Migrator, Indoctrinate, and View Converter.">
+    <meta name="keywords"
+          content="PHP systems architecture, PHP domain logic, PHP clean architecture, PHP hexagonal architecture, PHP ports adapters, PHP infrastructure separation, PHP architect, View Converter PHP, Migrator PHP">
+    <meta name="author" content="TCPX">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PHP Systems Architecture: Separating Domain Logic from Infrastructure">
+    <meta property="og:description"
+          content="Why PHP systems that mix domain logic with infrastructure code become impossible to upgrade — and how to separate them using ports and adapters, repository patterns, domain services, and purpose-built tools like Migrator, Indoctrinate, and View Converter.">
+    <meta property="og:url" content="https://tcpx.co.uk/blog/php-systems-architecture-separating-domain-from-infrastructure">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/code-carousel.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PHP Systems Architecture: Separating Domain Logic from Infrastructure">
+    <meta name="twitter:description"
+          content="Why PHP systems that mix domain logic with infrastructure code become impossible to upgrade — and how to separate them using ports and adapters, repository patterns, domain services, and purpose-built tools like Migrator, Indoctrinate, and View Converter.">
+    <meta name="twitter:image" content="/images/code-carousel.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TCPX",
+      "url": "https://tcpx.co.uk",
+      "logo": "https://tcpx.co.uk/images/logo-white.png",
+      "description": "PHP consultancy specialising in systems architecture, automated refactoring with Rector, and database layer modernisation.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3rd Floor Suite, 207 Regent Street",
+        "addressLocality": "London",
+        "postalCode": "W1B 3HH",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+420608187548",
+        "email": "info@tcpx.co.uk",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "PHP Systems Architecture: Separating Domain Logic from Infrastructure",
+  "description": "Why PHP systems that mix domain logic with infrastructure code become impossible to upgrade \u2014 and how to separate them using ports and adapters, repository patterns, domain services, and purpose-built tools like Migrator, Indoctrinate, and View Converter.",
+  "datePublished": "2026-04-07",
+  "url": "https://tcpx.co.uk/blog/php-systems-architecture-separating-domain-from-infrastructure",
+  "author": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  }
+}
+</script>
+
+                    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css">
+
+                            
+<link rel="stylesheet" href="/assets/styles/app-AbbTHjh.css">
+<script type="importmap" data-turbo-track="reload">
+{
+    "imports": {
+        "app": "/assets/app-9GMUmJo.js",
+        "flowbite": "/assets/vendor/flowbite/flowbite.index-Q2orw1n.js",
+        "/assets/styles/app.css": "data:application/javascript,",
+        "/assets/bootstrap.js": "/assets/bootstrap-oQyLn8f.js",
+        "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-djqeLqa.js",
+        "@stimulus-components/clipboard": "/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js",
+        "@stimulus-components/scroll-progress": "/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js",
+        "@hotwired/stimulus": "/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js",
+        "/assets/@symfony/ux-turbo/turbo_controller.js": "/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js",
+        "/assets/@symfony/ux-typed/controller.js": "/assets/@symfony/ux-typed/controller-KqqaUoQ.js",
+        "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-VYgvytJ.js",
+        "@hotwired/turbo": "/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js",
+        "typed.js": "/assets/vendor/typed.js/typed.js.index-_zctSmG.js",
+        "bootstrap": "/assets/vendor/bootstrap/bootstrap.index-rt72SdS.js",
+        "@popperjs/core": "/assets/vendor/@popperjs/core/core.index-ZE0xRfu.js",
+        "bootstrap/dist/css/bootstrap.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fbootstrap%2Fdist%2Fcss%2Fbootstrap.min-FxLwN4-.css%22%7D%29%29",
+        "flowbite-datepicker": "/assets/vendor/flowbite-datepicker/flowbite-datepicker.index-o9gVwB8.js",
+        "flowbite/dist/flowbite.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fflowbite%2Fdist%2Fflowbite.min-jce53wr.css%22%7D%29%29",
+        "flowbite/plugin": "/assets/vendor/flowbite/plugin-fQmEd4q.js",
+        "mini-svg-data-uri": "/assets/vendor/mini-svg-data-uri/mini-svg-data-uri.index-8WQk1DQ.js",
+        "tailwindcss/plugin": "/assets/vendor/tailwindcss/plugin-Eent4J-.js",
+        "tailwindcss/defaultTheme": "/assets/vendor/tailwindcss/defaultTheme-g5cacVq.js",
+        "tailwindcss/colors": "/assets/vendor/tailwindcss/colors-cCy2oHm.js"
+    }
+}
+</script><script async data-turbo-track="reload">
+if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (function () {
+    const script = document.createElement('script');
+    script.src = 'https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js';
+    script.setAttribute('async', 'async');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('integrity', 'sha384-ie1x72Xck445i0j4SlNJ5W5iGeL3Dpa0zD48MZopgWsjNB/lt60SuG1iduZGNnJn');
+    script.setAttribute('data-turbo-track', 'reload');
+    document.head.appendChild(script);
+})();
+</script>
+<link rel="modulepreload" href="/assets/app-9GMUmJo.js">
+<link rel="modulepreload" href="/assets/vendor/flowbite/flowbite.index-Q2orw1n.js">
+<link rel="modulepreload" href="/assets/bootstrap-oQyLn8f.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/loader-djqeLqa.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-typed/controller-KqqaUoQ.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-VYgvytJ.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js">
+<link rel="modulepreload" href="/assets/vendor/typed.js/typed.js.index-_zctSmG.js">
+<script type="module" data-turbo-track="reload">import 'app';</script>
+        
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HY1P5Z0CLJ');
+            </script>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+<nav class="bg-white mb-12 dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo-white.png" class="h-10" alt="TCPX Logo" />
+            <div class="flex flex-col">
+                <span class="text-xl font-semibold whitespace-nowrap dark:text-white">The Coding People X</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Automated Upgrades & Migrations</span>
+            </div>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="/services" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</a>
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/services"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-white">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-8">
+                    <a href="/blog" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+                    <span class="mx-2">›</span>
+                    <span class="text-gray-700 dark:text-gray-300">PHP Systems Architecture: Separating Domain Logic from Infrastructure</span>
+                </nav>
+
+                <div class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-3 uppercase tracking-wide">2026-04-07</div>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">PHP Systems Architecture: Separating Domain Logic from Infrastructure</h1>
+
+                <p class="text-lg text-gray-500 dark:text-gray-400 mb-10 border-b border-gray-200 dark:border-gray-700 pb-10">Why PHP systems that mix domain logic with infrastructure code become impossible to upgrade — and how to separate them using ports and adapters, repository patterns, domain services, and purpose-built tools like Migrator, Indoctrinate, and View Converter.</p>
+
+                <div class="article-body">
+                    <p>The most common structural problem in legacy PHP applications is not a specific bad pattern — it's the absence of any separation between what the application <em>does</em> and how it <em>does it</em>. Business rules live in controllers. Database queries appear in view templates. Emails are sent from inside domain methods. The result is a codebase where nothing can be tested in isolation, nothing can be replaced, and nothing can be upgraded without touching everything.</p>
+<p>This article explains the architectural principle that fixes it — and the tools that automate the mechanical parts of getting there.</p>
+<h2>Assess before you restructure: Migrator</h2>
+<p>Before any architectural work starts, you need to know what you're dealing with. <a href="https://github.com/Kerrialn/migrator">Migrator</a> analyses the complexity of upgrading or migrating your project — checking your codebase to assess effort, highlighting potential challenges, dependencies, and necessary changes.</p>
+<pre><code class="language-bash">composer require kerrialn/migrator
+vendor/bin/migrator analyse /path/to/your/project</code></pre>
+<p>Migrator's output tells you where the most complex coupling exists, which dependencies are blocking upgrades, and which areas of the codebase will need manual architectural intervention versus automated tooling. It shapes the priority order for the architectural work: tackle the highest-complexity, highest-risk areas first.</p>
+<h2>What &quot;domain logic&quot; means</h2>
+<p>Domain logic is the code that encodes your business rules. If you stripped out all the databases, HTTP frameworks, email providers, and third-party APIs, the domain logic is what would remain — the pure rules about what your application does.</p>
+<p>Examples of domain logic:</p>
+<ul>
+<li>Calculating an invoice total with applicable discounts</li>
+<li>Determining whether an order can be cancelled based on its status</li>
+<li>Validating that a subscription has sufficient credits for an operation</li>
+</ul>
+<p>Examples of infrastructure:</p>
+<ul>
+<li>The SQL query that retrieves the order</li>
+<li>The HTTP controller that parses the request</li>
+<li>The SMTP call that sends the confirmation email</li>
+<li>The Stripe SDK call that processes the payment</li>
+</ul>
+<p>Domain logic contains no <code>PDO</code>, no <code>Request</code>, no <code>Mailer</code>. It is pure PHP: value objects, entities, domain services, and domain events.</p>
+<h2>Why mixing them is an upgrade blocker</h2>
+<p>When domain logic is mixed with infrastructure code, every upgrade touches everything. Want to move from Symfony 4 to Symfony 6? The domain logic that's embedded in Symfony-specific controllers, services, and forms has to change too. Want to move from raw MySQL to Doctrine? Every file containing both a query and a business rule needs touching.</p>
+<p>Rector can automate PHP syntax upgrades. It cannot extract business logic from infrastructure — that's an architectural change, and it has to be done deliberately.</p>
+<h2>The ports and adapters pattern</h2>
+<p>The cleanest model for this separation is Hexagonal Architecture (also known as Ports and Adapters). The core idea:</p>
+<ul>
+<li><strong>Domain</strong> — pure business logic, no dependencies on frameworks or infrastructure</li>
+<li><strong>Ports</strong> — interfaces the domain defines for things it needs (e.g. <code>OrderRepository</code>, <code>PaymentGateway</code>, <code>EmailNotifier</code>)</li>
+<li><strong>Adapters</strong> — concrete implementations of those interfaces that talk to actual infrastructure (Doctrine, Stripe, Symfony Mailer)</li>
+</ul>
+<pre><code>[HTTP Controller] → [Application Service] → [Domain] → [Port Interface]
+                                                              ↑
+                                                    [Adapter: Doctrine]
+                                                    [Adapter: Stripe]
+                                                    [Adapter: SymfonyMailer]</code></pre>
+<p>The domain knows nothing about the adapters. The adapters know the domain's interfaces. The application service orchestrates them. The controller knows only the application service.</p>
+<h2>A concrete PHP example</h2>
+<p>A legacy controller doing too much:</p>
+<pre><code class="language-php">class OrderController
+{
+    public function cancel(int $orderId): Response
+    {
+        $pdo = new PDO(getenv('DATABASE_URL'));
+        $order = $pdo-&gt;query("SELECT * FROM orders WHERE id = $orderId")-&gt;fetch();
+
+        if ($order['status'] !== 'pending') {
+            return new Response('Cannot cancel', 400);
+        }
+
+        $pdo-&gt;exec("UPDATE orders SET status = 'cancelled' WHERE id = $orderId");
+
+        mail($order['customer_email'], 'Order Cancelled', 'Your order has been cancelled.');
+
+        return new Response('Cancelled');
+    }
+}</code></pre>
+<p>This controller is untestable, SQL-coupled, and impossible to upgrade without rewriting.</p>
+<p>The same logic after domain separation:</p>
+<pre><code class="language-php">// Domain
+final class Order
+{
+    public function cancel(): void
+    {
+        if (!$this-&gt;status-&gt;isPending()) {
+            throw new CannotCancelOrderException($this-&gt;id);
+        }
+        $this-&gt;status = OrderStatus::Cancelled;
+        $this-&gt;record(new OrderCancelled($this-&gt;id, $this-&gt;customerId));
+    }
+}
+
+// Application Service
+final class CancelOrder
+{
+    public function __construct(
+        private OrderRepository $orders,
+        private EventDispatcher $events,
+    ) {}
+
+    public function execute(CancelOrderCommand $command): void
+    {
+        $order = $this-&gt;orders-&gt;findById($command-&gt;orderId);
+        $order-&gt;cancel();
+        $this-&gt;orders-&gt;save($order);
+        $this-&gt;events-&gt;dispatch(...$order-&gt;releaseEvents());
+    }
+}
+
+// Controller (thin)
+final class OrderController
+{
+    public function cancel(int $orderId, CancelOrder $useCase): Response
+    {
+        $useCase-&gt;execute(new CancelOrderCommand($orderId));
+        return new Response('Cancelled');
+    }
+}</code></pre>
+<p>Now <code>Order::cancel()</code> can be unit tested without a database. The SQL is behind <code>OrderRepository</code>. The email is behind an event listener. The controller does nothing but translate HTTP to a command.</p>
+<h2>How to get there incrementally</h2>
+<p>You can't rewrite a large legacy codebase all at once. The incremental path, with tooling at each layer:</p>
+<p><strong>1. Assess with Migrator</strong> — run <code>vendor/bin/migrator analyse</code> to map complexity and identify which bounded contexts are safest to tackle first.</p>
+<p><strong>2. Identify a bounded context</strong> — pick one area of the application (e.g. orders, subscriptions, invoicing) and apply the pattern there first.</p>
+<p><strong>3. Extract the domain</strong> — create plain PHP classes that hold the business rules; no framework dependencies. Rector can apply PHP 8 syntax upgrades to these immediately — clean domain classes are exactly what Rector works best on.</p>
+<p><strong>4. Define repository interfaces</strong> — what does the domain need from the database? Express it as an interface. Use <a href="https://github.com/Kerrialn/indoctrinate">Indoctrinate</a> to synchronise the database schema with Doctrine expectations before writing entity mappings:</p>
+<pre><code class="language-bash">composer require kerrialn/indoctrinate
+php bin/indoctrinate fix --dry
+php bin/indoctrinate fix</code></pre>
+<p>Indoctrinate ensures the schema is in a state Doctrine can map cleanly — missing primary keys, type mismatches, and constraint gaps are fixed automatically before you invest time in entity configuration.</p>
+<p><strong>5. Write the Doctrine adapter</strong> — implement the repository interface; the domain never changes when you switch adapters.</p>
+<p><strong>6. Modernise the presentation layer with View Converter</strong> — legacy PHP views mixed with business logic are one of the most common sources of domain/infrastructure entanglement. <a href="https://github.com/Kerrialn/view-converter">View Converter</a> automates the conversion of PHP view files to Twig:</p>
+<pre><code class="language-bash">composer require kerrialn/view-converter
+php bin/view-converter php-to-twig /path/to/your/views</code></pre>
+<p>This removes the PHP-in-templates pattern that tends to contain raw SQL, embedded business logic, and direct superglobal access — all at once, without manual file-by-file rewriting.</p>
+<p><strong>7. Thin down the controller</strong> — once views are converted and domain logic is extracted, what remains in the controller is just HTTP translation. Move any remaining logic into an application service.</p>
+<p><strong>8. Apply Rector to the result</strong> — once the structure is clean, Rector's PHP 8 upgrades, type declarations, and deprecated API replacements apply safely and predictably to code that has clear boundaries.</p>
+<h2>The full toolchain</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Tool</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Assessment</strong></td>
+<td>Migrator</td>
+<td>Analyses upgrade complexity, surfaces manual tasks</td>
+</tr>
+<tr>
+<td><strong>Code</strong></td>
+<td>Rector</td>
+<td>Automated PHP 8 syntax and API transformations</td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>Indoctrinate</td>
+<td>Syncs schema with Doctrine, fixes inconsistencies</td>
+</tr>
+<tr>
+<td><strong>Views</strong></td>
+<td>View Converter</td>
+<td>Converts PHP view files to Twig automatically</td>
+</tr>
+</tbody>
+</table>
+<p>These tools work in sequence. Migrator tells you what you're facing. View Converter and Indoctrinate clear the infrastructure entanglement. Rector then upgrades the clean PHP that remains.</p>
+<h2>The payoff</h2>
+<p>Once domain logic is separated from infrastructure:</p>
+<ul>
+<li>Domain classes can be unit tested in milliseconds, without a database</li>
+<li>Framework upgrades only affect adapters and controllers — the domain is untouched</li>
+<li>Rector can apply type upgrades and PHP 8 transformations to a clean, predictable structure</li>
+<li>View Converter has eliminated PHP-in-templates; Twig templates have no business logic to migrate</li>
+<li>Indoctrinate keeps the schema aligned with Doctrine as it evolves</li>
+<li>New developers understand the rules of the system without reading SQL</li>
+<li>The codebase can be handed over without a six-month knowledge-transfer project</li>
+</ul>
+<p>If this separation is what your codebase is missing, the right starting point is an architecture review. <a href="/contact">Get in touch</a> to discuss what a structured PHP systems architecture engagement looks like.</p>
+                </div>
+
+                <hr class="my-12 border-gray-200 dark:border-gray-700">
+
+                <div class="rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Need help with this?</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">TCPX specialises in PHP systems architecture, automated refactoring with Rector, and database layer modernisation. Get in touch to discuss your project.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="/contact" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Get in touch</a>
+                        <a href="/blog" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-600 border border-blue-200 dark:border-gray-600">More articles</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
+    Copyright © 2026 tcpx.co.uk
+</footer>
+
+</body>
+</html>

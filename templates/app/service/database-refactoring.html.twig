@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PHP Database Layer Refactoring & Modernisation – TCPX{% endblock %}
+
+{% block meta_description %}Automated PHP database layer refactoring using Indoctrinate: schema normalisation, raw query replacement, ORM migration to Doctrine, and safe incremental DB modernisation.{% endblock %}
+{% block meta_keywords %}PHP database refactoring, database layer modernisation, schema normalisation PHP, raw SQL to Doctrine, ORM migration PHP, Indoctrinate PHP, PHP DB upgrade, legacy database PHP{% endblock %}
+
+{% block og_title %}PHP Database Layer Refactoring – TCPX{% endblock %}
+{% block og_description %}Schema normalisation, raw query replacement, and ORM migration for legacy PHP databases using Indoctrinate. Safe, incremental DB modernisation.{% endblock %}
+{% block og_url %}https://tcpx.co.uk/services/database-refactoring{% endblock %}
+{% block twitter_title %}PHP Database Layer Refactoring – TCPX{% endblock %}
+{% block twitter_description %}Schema normalisation, raw query replacement, and ORM migration for legacy PHP databases using Indoctrinate. Safe and incremental.{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "PHP Database Layer Refactoring",
+  "provider": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "name": "PHP Database Layer Refactoring & Modernisation",
+  "description": "Automated PHP database modernisation using Indoctrinate: schema normalisation, raw query replacement with ORM, Doctrine migration, and safe incremental DB layer upgrades.",
+  "url": "https://tcpx.co.uk/services/database-refactoring",
+  "areaServed": "GB"
+}
+</script>
+{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <a href="{{ path('services') }}" class="hover:text-blue-600 dark:hover:text-blue-400">Services</a>
+                    <span class="mx-2">›</span>
+                    <span>Database Layer Refactoring</span>
+                </nav>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">PHP Database Layer Refactoring & Modernisation</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    The database layer is often the most neglected part of a legacy PHP application — and the riskiest to change. Raw SQL scattered across service classes, un-normalised schemas that have grown organically for a decade, no migration tooling, no ORM. We modernise it safely using <a href="https://github.com/Kerrialn/indoctrinate" class="text-blue-600 dark:text-blue-400 underline" target="_blank" rel="noopener">Indoctrinate</a> — our open-source tool for synchronising your database with Doctrine specifications — alongside the full incremental migration process.
+                </p>
+
+                <!-- The problem -->
+                <div class="mb-12 rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">What makes legacy PHP database layers hard to change</h2>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-red-500">✗</span>Raw SQL queries spread across dozens of files with no central abstraction</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-red-500">✗</span>Schema changes happen in production with no migration history</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-red-500">✗</span>Tables with hundreds of columns, many unused or duplicated</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-red-500">✗</span>Business logic embedded directly in stored procedures or triggers</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-red-500">✗</span>No indexes, no foreign key constraints, referential integrity enforced only in PHP</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-red-500">✗</span>Active Record patterns that couple domain objects tightly to DB schema</li>
+                    </ul>
+                </div>
+
+                <!-- Indoctrinate -->
+                <div class="mb-12 rounded-2xl border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950 p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Indoctrinate: automated schema analysis & fixing</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        <a href="https://github.com/Kerrialn/indoctrinate" class="text-blue-600 dark:text-blue-400 underline font-medium" target="_blank" rel="noopener">Indoctrinate</a> is an open-source tool we built and maintain to automate the schema side of database refactoring. It analyses your live database against Doctrine specifications, surfaces inconsistencies, and applies fixes automatically — so Doctrine entity mappings don't fail on structural problems that could have been caught in advance.
+                    </p>
+                    <div class="bg-gray-900 rounded-lg p-4 text-sm font-mono text-gray-100 space-y-1 mb-4">
+                        <div><span class="text-green-400">$</span> composer require kerrialn/indoctrinate</div>
+                        <div><span class="text-green-400">$</span> php bin/indoctrinate fix --dry</div>
+                        <div><span class="text-green-400">$</span> php bin/indoctrinate fix --log=var/log/indoctrinate</div>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">The <code class="bg-gray-200 dark:bg-gray-700 px-1 rounded">--dry</code> flag previews every change without applying it — the same safe-first approach we use with Rector.</p>
+                </div>
+
+                <!-- What we do -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">How we refactor the database layer</h2>
+                    <div class="space-y-6">
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Schema analysis with Indoctrinate</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We run Indoctrinate's dry-run mode against your live database to get a complete picture: missing auto-increment primary keys, column-to-type mismatches, constraint gaps, normalisation violations, and tables that diverge from Doctrine's expectations. This is the starting inventory — the prioritised schema remediation plan that shapes all subsequent work.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Query inventory and consolidation</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We locate every raw SQL query in your codebase, group them by the table or concept they operate on, and identify which can be consolidated behind a repository interface. This gives us the abstraction target before writing a single line of ORM mapping.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Incremental ORM introduction</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We introduce ORM mappings (typically Doctrine) alongside existing raw queries using a dual-path approach. Both paths run simultaneously, results are compared, and the raw query is removed only after the ORM version is verified to be producing identical results. No cutover risk.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Schema migration with rollback safety</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Schema changes are applied using reversible migrations: every ALTER TABLE has a matching rollback, columns are never dropped until the code reading them has been removed and verified, and we use expand-contract patterns for zero-downtime changes on live traffic. Indoctrinate is re-run after each batch to verify the schema remains Doctrine-consistent.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">View and stored procedure migration</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Database views and stored procedures that contain business logic are migrated into the application layer — PHP services with proper test coverage — where they can be maintained, versioned, and upgraded with tools like Rector.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies -->
+                <div class="mb-12 rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Technologies we work with</h2>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Indoctrinate: automated schema analysis and Doctrine synchronisation</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>MySQL / MariaDB schema analysis and migration</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>PostgreSQL modernisation</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Doctrine ORM mapping and query builder migration</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Doctrine Migrations for versioned schema changes</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Propel to Doctrine migration</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Active Record (Eloquent, CakePHP) to repository pattern</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>View/stored procedure logic extraction to PHP</li>
+                    </ul>
+                </div>
+
+                <!-- Related services -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Related services</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <a href="{{ path('service_php_systems_architecture') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                            <div class="font-semibold text-gray-900 dark:text-white mb-1">PHP Systems Architecture</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Define the repository and service boundary structure that the refactored database layer will sit behind.</div>
+                        </a>
+                        <a href="{{ path('service_automated_php_refactoring') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                            <div class="font-semibold text-gray-900 dark:text-white mb-1">Automated PHP Refactoring with Rector</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Pair DB layer modernisation with Rector-based code refactoring for a complete application upgrade.</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="mb-20 flex flex-col sm:flex-row gap-3">
+                    <a href="{{ path('contact') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Discuss your database refactoring project</a>
+                    <a href="{{ path('services') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-800 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-700 border border-blue-200 dark:border-gray-700">See all services</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

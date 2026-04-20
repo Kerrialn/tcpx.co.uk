@@ -3,29 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="{{ asset('images/logo-white.png') }}"/>
-    <title>{% block title %}TCPX – Legacy PHP Migration & Valuation Recovery{% endblock %}</title>
+    <title>{% block title %}TCPX – PHP Systems Architecture & Automated Refactoring Consultancy{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <meta name="description"
-          content="Legacy PHP erodes business valuation and blocks exit options. TCPX modernises your codebase safely and incrementally so you regain control of risk, roadmap and valuation. Every €1 invested in modernisation today can return multiples at exit.">
+          content="{% block meta_description %}TCPX are PHP consultants specialising in systems architecture, automated refactoring with Rector, and database layer modernisation. We modernise legacy PHP codebases safely and incrementally.{% endblock %}">
     <meta name="keywords"
-          content="legacy PHP upgrade, PHP migration experts, PHP 8 upgrade, Symfony migration, Laravel migration, CodeIgniter to Symfony, Zend to Laminas, Drupal 7 migration, Magento 1 to 2 upgrade, database fixer, valuation recovery, technical due diligence">
+          content="{% block meta_keywords %}PHP systems architecture, automated PHP refactoring, Rector PHP, PHP consultancy, legacy PHP upgrade, PHP 8 upgrade, Symfony migration, database refactoring, DB layer modernisation, PHP architect{% endblock %}">
     <meta name="author" content="TCPX">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="TCPX – Valuation Recovery through Legacy PHP Upgrades">
+    <meta property="og:title" content="{% block og_title %}TCPX – PHP Systems Architecture & Automated Refactoring{% endblock %}">
     <meta property="og:description"
-          content="We help companies protect and grow business value by modernising legacy PHP systems: PHP version upgrades, framework migrations, database normalisation and view conversion.">
-    <meta property="og:url" content="https://tcpx.co.uk/">
+          content="{% block og_description %}PHP consultants specialising in systems architecture, automated refactoring with Rector, and database layer modernisation for legacy codebases.{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}https://tcpx.co.uk/{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{ asset('images/code-carousel.png') }}">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TCPX – Legacy PHP Upgrades for Business Valuation Recovery">
+    <meta name="twitter:title" content="{% block twitter_title %}TCPX – PHP Systems Architecture & Automated Refactoring{% endblock %}">
     <meta name="twitter:description"
-          content="Legacy code kills business valuation. TCPX modernises PHP apps with a multi-layer approach – from DB to framework to views – so you can exit with confidence.">
+          content="{% block twitter_description %}PHP consultants specialising in systems architecture, automated refactoring with Rector, and database layer modernisation for legacy codebases.{% endblock %}">
     <meta name="twitter:image" content="{{ asset('images/code-carousel.png') }}">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TCPX",
+      "url": "https://tcpx.co.uk",
+      "logo": "https://tcpx.co.uk/images/logo-white.png",
+      "description": "PHP consultancy specialising in systems architecture, automated refactoring with Rector, and database layer modernisation.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3rd Floor Suite, 207 Regent Street",
+        "addressLocality": "London",
+        "postalCode": "W1B 3HH",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+420608187548",
+        "email": "info@tcpx.co.uk",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    {% block json_ld %}{% endblock %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css">
 
     {% block stylesheets %}
         {# TailwindCSS and Flowbite are handled by AssetMapper and should be included in the CSS output. #}
@@ -35,6 +63,15 @@
         {% block importmap %}
             {{ importmap('app') }}
         {% endblock %}
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+        <script>
+            document.addEventListener('turbo:load', function () {
+                document.querySelectorAll('.article-body pre code').forEach(function (el) {
+                    hljs.highlightElement(el);
+                });
+            });
+        </script>
 
         {% if app.environment == 'prod' %}
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>

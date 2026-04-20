@@ -3,33 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="/images/logo-white.png"/>
-    <title>FAQ</title>
+    <title>FAQ – PHP Architecture, Rector Refactoring & DB Modernisation | TCPX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <meta name="description"
-          content="Legacy PHP erodes business valuation and blocks exit options. TCPX modernises your codebase safely and incrementally so you regain control of risk, roadmap and valuation. Every €1 invested in modernisation today can return multiples at exit.">
+          content="Answers to common questions about PHP systems architecture consultancy, automated refactoring with Rector, database layer modernisation, and how TCPX works.">
     <meta name="keywords"
-          content="legacy PHP upgrade, PHP migration experts, PHP 8 upgrade, Symfony migration, Laravel migration, CodeIgniter to Symfony, Zend to Laminas, Drupal 7 migration, Magento 1 to 2 upgrade, database fixer, valuation recovery, technical due diligence">
+          content="PHP architecture FAQ, Rector PHP questions, automated PHP refactoring FAQ, database refactoring questions, PHP consultancy FAQ, legacy PHP upgrade questions">
     <meta name="author" content="TCPX">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="TCPX – Valuation Recovery through Legacy PHP Upgrades">
+    <meta property="og:title" content="FAQ – PHP Architecture, Rector & DB Modernisation | TCPX">
     <meta property="og:description"
-          content="We help companies protect and grow business value by modernising legacy PHP systems: PHP version upgrades, framework migrations, database normalisation and view conversion.">
-    <meta property="og:url" content="https://tcpx.co.uk/">
+          content="Common questions about PHP systems architecture consultancy, Rector-powered automated refactoring, database layer modernisation, and our engagement model.">
+    <meta property="og:url" content="https://tcpx.co.uk/faq">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/images/code-carousel.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TCPX – Legacy PHP Upgrades for Business Valuation Recovery">
+    <meta name="twitter:title" content="FAQ – PHP Architecture, Rector & DB Modernisation | TCPX">
     <meta name="twitter:description"
-          content="Legacy code kills business valuation. TCPX modernises PHP apps with a multi-layer approach – from DB to framework to views – so you can exit with confidence.">
+          content="Common questions about PHP systems architecture, Rector automated refactoring, database modernisation, and how TCPX engagements work.">
     <meta name="twitter:image" content="/images/code-carousel.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TCPX",
+      "url": "https://tcpx.co.uk",
+      "logo": "https://tcpx.co.uk/images/logo-white.png",
+      "description": "PHP consultancy specialising in systems architecture, automated refactoring with Rector, and database layer modernisation.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3rd Floor Suite, 207 Regent Street",
+        "addressLocality": "London",
+        "postalCode": "W1B 3HH",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+420608187548",
+        "email": "info@tcpx.co.uk",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does PHP systems architecture consultancy involve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PHP systems architecture consultancy means designing or redesigning the structural foundation of a PHP application — separating domain logic from framework concerns, defining service boundaries, choosing appropriate design patterns, and creating a layered architecture that can be upgraded incrementally. We assess your current structure, identify coupling and cohesion problems, and produce an actionable roadmap to move toward a clean, maintainable architecture."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Rector and how do you use it for automated PHP refactoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rector is an open-source PHP refactoring tool that applies automated code transformations using AST (Abstract Syntax Tree) analysis. It can upgrade PHP syntax, migrate deprecated APIs, enforce coding standards, and apply framework-specific migrations — all without manual line-by-line changes. We use Rector as the core of our automated refactoring service, writing custom rules where needed and running it against your codebase in safe, auditable batches."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you refactor the database layer safely?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We use Indoctrinate (github.com/Kerrialn/indoctrinate), an open-source tool that synchronises your database with Doctrine specifications and surfaces schema inconsistencies automatically. We then apply changes incrementally: introducing ORM mappings alongside existing raw queries using a dual-path pattern, running both in parallel to compare results, and only cutting over once behaviour is verified. No big-bang schema changes — every step is production-safe and reversible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does automated refactoring with Rector take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Timeline depends on codebase size and the number of custom rules required. A focused PHP 7 → 8 upgrade on a medium-sized application typically takes 2–4 weeks of applied Rector runs, review, and testing. Broader framework migrations or custom-rule development take longer. We scope this precisely during the discovery phase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you manage all the layers — infrastructure, framework, domain logic, database, views, integrations and cross-cutting concerns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We break an application down into seven layers and modernise each one in the right order: Infrastructure/Environment (assessed with Migrator), Framework (routing, DI, auth), Domain Logic (upgraded with Rector), Database/Persistence (schema fixed with Indoctrinate, ORM mapping via Doctrine), Presentation/Views (PHP views converted to Twig with View Converter), Integrations/APIs (external SDKs, webhooks), and Cross-Cutting Concerns (security, logging, caching). Combined with our start-one-finish-one discipline, upgrades are safe, predictable, and never chaotic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work on WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We focus on non-WordPress PHP systems and bespoke applications where migration risk and valuation impact are highest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you work with our in-house developers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We embed alongside your team, bringing upgrade tooling, checklists and senior guidance. Your team retains ownership; we eliminate risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you minimise downtime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We ship in small slices behind feature flags, with automated smoke tests and database safety checks. No big-bang releases."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size projects do you usually take on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical engagements range from €150k to €200k, delivered in production-safe increments. Smaller audits and advisory projects are also available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer white-label services for agencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We operate as a white-label migration partner for digital agencies. You keep the client relationship, we deliver the migration."
+      }
+    }
+  ]
+}
+</script>
 
                 
                         
-<link rel="stylesheet" href="/assets/styles/app-e5Jtn1P.css">
+<link rel="stylesheet" href="/assets/styles/app-AbbTHjh.css">
 <script type="importmap" data-turbo-track="reload">
 {
     "imports": {
@@ -41,7 +154,7 @@
         "@stimulus-components/clipboard": "/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js",
         "@stimulus-components/scroll-progress": "/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js",
         "@hotwired/stimulus": "/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js",
-        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-pyqa-xR.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js",
         "/assets/@symfony/ux-turbo/turbo_controller.js": "/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js",
         "/assets/@symfony/ux-typed/controller.js": "/assets/@symfony/ux-typed/controller-KqqaUoQ.js",
         "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-VYgvytJ.js",
@@ -77,7 +190,7 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
 <link rel="modulepreload" href="/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js">
 <link rel="modulepreload" href="/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js">
 <link rel="modulepreload" href="/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js">
-<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/controllers-pyqa-xR.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js">
 <link rel="modulepreload" href="/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js">
 <link rel="modulepreload" href="/assets/@symfony/ux-typed/controller-KqqaUoQ.js">
 <link rel="modulepreload" href="/assets/controllers/hello_controller-VYgvytJ.js">
@@ -123,6 +236,13 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
                     </a>
                 </li>
                 <li>
+                    <a href="/blog"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Blog
+                    </a>
+                </li>
+                <li>
                     <a href="/faq"
                        class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
                        text-white">
@@ -149,7 +269,7 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
                 <!-- Page title -->
                 <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6">Frequently Asked Questions</h1>
                 <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">
-                    Common questions about our upgrade process, methodology and collaboration.
+                    Common questions about PHP systems architecture consultancy, automated refactoring with Rector, database layer modernisation, and how we work.
                 </p>
 
                 <!-- FAQ list -->
@@ -157,25 +277,64 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
 
                     <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
                         <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            What does PHP systems architecture consultancy involve?
+                        </summary>
+                        <div class="mt-2 space-y-3 text-gray-700 dark:text-gray-300">
+                            <p>PHP systems architecture consultancy means designing or redesigning the structural foundation of a PHP application — separating domain logic from framework concerns, defining service boundaries, choosing appropriate design patterns, and creating a layered architecture that can be upgraded incrementally.</p>
+                            <p>We assess your current structure, identify coupling and cohesion problems, and produce an actionable roadmap to move toward a clean, maintainable architecture. See our dedicated <a href="/services/php-systems-architecture" class="text-blue-600 dark:text-blue-400 underline">PHP systems architecture service page</a> for more detail.</p>
+                        </div>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            What is Rector and how do you use it for automated PHP refactoring?
+                        </summary>
+                        <div class="mt-2 space-y-3 text-gray-700 dark:text-gray-300">
+                            <p>Rector is an open-source PHP refactoring tool that applies automated code transformations using AST (Abstract Syntax Tree) analysis. It can upgrade PHP syntax, migrate deprecated APIs, enforce coding standards, and apply framework-specific migrations — all without manual line-by-line changes.</p>
+                            <p>We use Rector as the core of our automated refactoring service, writing custom rules where needed and running it against your codebase in safe, auditable batches. See our <a href="/services/automated-php-refactoring" class="text-blue-600 dark:text-blue-400 underline">automated PHP refactoring service page</a> for more.</p>
+                        </div>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            How do you refactor the database layer safely?
+                        </summary>
+                        <div class="mt-2 space-y-3 text-gray-700 dark:text-gray-300">
+                            <p>We use <a href="https://github.com/Kerrialn/indoctrinate" class="text-blue-600 dark:text-blue-400 underline" target="_blank" rel="noopener">Indoctrinate</a> — our open-source tool that synchronises your database with Doctrine specifications and surfaces schema inconsistencies automatically. Run <code class="bg-gray-100 dark:bg-gray-700 px-1 rounded text-sm">php bin/indoctrinate fix --dry</code> to preview all changes, then apply them safely.</p>
+                            <p>On the code side, we apply changes incrementally: introducing ORM mappings alongside existing raw queries using a dual-path pattern, running both in parallel to compare results, and only cutting over once behaviour is verified. No big-bang schema changes — every step is production-safe and reversible.</p>
+                            <p>Learn more on our <a href="/services/database-refactoring" class="text-blue-600 dark:text-blue-400 underline">database refactoring service page</a>.</p>
+                        </div>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
+                            How long does automated refactoring with Rector take?
+                        </summary>
+                        <p class="mt-2 text-gray-700 dark:text-gray-300">
+                            Timeline depends on codebase size and the number of custom rules required. A focused PHP 7 → 8 upgrade on a medium-sized application typically takes 2–4 weeks of applied Rector runs, review, and testing. Broader framework migrations or custom-rule development take longer. We scope this precisely during the discovery phase.
+                        </p>
+                    </details>
+
+                    <details class="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                        <summary class="cursor-pointer font-medium text-gray-900 dark:text-white">
                             How do you manage all the layers — infrastructure, framework, domain logic, database, views, integrations and cross-cutting concerns?
                         </summary>
                         <div class="mt-2 space-y-3 text-gray-700 dark:text-gray-300">
                             <p>
-                                We break an application down into seven layers and modernise each one in the right order. That way complexity is contained and upgrades don’t blow up downstream.
+                                We break an application down into seven layers and modernise each one in the right order. That way complexity is contained and upgrades don't blow up downstream.
                             </p>
                             <ul class="list-disc pl-6 space-y-2">
-                                <li><span class="font-medium">Infrastructure / Environment:</span> PHP runtime, extensions, containers, servers, build pipelines.</li>
+                                <li><span class="font-medium">Infrastructure / Environment:</span> PHP runtime, extensions, containers, servers, build pipelines. Assessed upfront with <a href="https://github.com/Kerrialn/migrator" class="text-blue-600 dark:text-blue-400 underline" target="_blank" rel="noopener">Migrator</a>.</li>
                                 <li><span class="font-medium">Framework:</span> routing, dependency injection, request/response, authentication/authorization.</li>
-                                <li><span class="font-medium">Domain Logic:</span> business rules, services, entities, events — separated so it outlives any framework.</li>
-                                <li><span class="font-medium">Database / Persistence:</span> schema, migrations, ORM mappings, raw queries. Normalised with our DB Fixer tooling.</li>
-                                <li><span class="font-medium">Presentation / Views:</span> templates, frontend assets, emails, reports. Converted incrementally (e.g. legacy PHP → Twig).</li>
+                                <li><span class="font-medium">Domain Logic:</span> business rules, services, entities, events — separated so it outlives any framework. Upgraded with Rector.</li>
+                                <li><span class="font-medium">Database / Persistence:</span> schema, migrations, ORM mappings, raw queries. Normalised and Doctrine-synced with <a href="https://github.com/Kerrialn/indoctrinate" class="text-blue-600 dark:text-blue-400 underline" target="_blank" rel="noopener">Indoctrinate</a>.</li>
+                                <li><span class="font-medium">Presentation / Views:</span> templates, frontend assets, emails, reports. PHP views converted to Twig with <a href="https://github.com/Kerrialn/view-converter" class="text-blue-600 dark:text-blue-400 underline" target="_blank" rel="noopener">View Converter</a>.</li>
                                 <li><span class="font-medium">Integrations / APIs:</span> external SDKs, internal APIs, webhooks, queues. Updated and versioned safely.</li>
                                 <li><span class="font-medium">Cross-Cutting Concerns:</span> security, logging, monitoring, caching, background jobs, configuration.</li>
                             </ul>
                             <p>
-                                We use a variety of in-house tools and proven open-source technologies to handle each layer —
-                                from database fixes to code refactoring and view conversion. Combined with our
-                                start-one-finish-one discipline, this ensures upgrades are safe, predictable, and never chaotic.
+                                We combine open-source tools we build and maintain — Migrator, Rector, Indoctrinate, View Converter — with our
+                                start-one-finish-one discipline to ensure upgrades are safe, predictable, and never chaotic.
                             </p>
                         </div>
                     </details>
@@ -236,7 +395,7 @@ if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (fu
 </main>
 
 <footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
-    Copyright © 2025 tcpx.co.uk
+    Copyright © 2026 tcpx.co.uk
 </footer>
 
 </body>

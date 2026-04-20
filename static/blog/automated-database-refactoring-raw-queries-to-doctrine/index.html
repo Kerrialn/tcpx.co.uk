@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/logo-white.png"/>
+    <title>Automated Database Refactoring: Converting Raw PHP Queries to Doctrine | TCPX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="How to safely migrate raw SQL queries scattered across a legacy PHP codebase to Doctrine ORM using Indoctrinate: the dual-path pattern, repository introduction, and incremental cutover without big-bang risk.">
+    <meta name="keywords"
+          content="PHP database refactoring, raw SQL to Doctrine, PHP Doctrine migration, ORM migration PHP, database layer modernisation PHP, legacy PHP database upgrade, Indoctrinate PHP, kerrialn/indoctrinate">
+    <meta name="author" content="TCPX">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Automated Database Refactoring: Converting Raw PHP Queries to Doctrine">
+    <meta property="og:description"
+          content="How to safely migrate raw SQL queries scattered across a legacy PHP codebase to Doctrine ORM using Indoctrinate: the dual-path pattern, repository introduction, and incremental cutover without big-bang risk.">
+    <meta property="og:url" content="https://tcpx.co.uk/blog/automated-database-refactoring-raw-queries-to-doctrine">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/code-carousel.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automated Database Refactoring: Converting Raw PHP Queries to Doctrine">
+    <meta name="twitter:description"
+          content="How to safely migrate raw SQL queries scattered across a legacy PHP codebase to Doctrine ORM using Indoctrinate: the dual-path pattern, repository introduction, and incremental cutover without big-bang risk.">
+    <meta name="twitter:image" content="/images/code-carousel.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TCPX",
+      "url": "https://tcpx.co.uk",
+      "logo": "https://tcpx.co.uk/images/logo-white.png",
+      "description": "PHP consultancy specialising in systems architecture, automated refactoring with Rector, and database layer modernisation.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3rd Floor Suite, 207 Regent Street",
+        "addressLocality": "London",
+        "postalCode": "W1B 3HH",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+420608187548",
+        "email": "info@tcpx.co.uk",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Automated Database Refactoring: Converting Raw PHP Queries to Doctrine",
+  "description": "How to safely migrate raw SQL queries scattered across a legacy PHP codebase to Doctrine ORM using Indoctrinate: the dual-path pattern, repository introduction, and incremental cutover without big-bang risk.",
+  "datePublished": "2026-03-24",
+  "url": "https://tcpx.co.uk/blog/automated-database-refactoring-raw-queries-to-doctrine",
+  "author": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  }
+}
+</script>
+
+                    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/atom-one-dark.min.css">
+
+                            
+<link rel="stylesheet" href="/assets/styles/app-AbbTHjh.css">
+<script type="importmap" data-turbo-track="reload">
+{
+    "imports": {
+        "app": "/assets/app-9GMUmJo.js",
+        "flowbite": "/assets/vendor/flowbite/flowbite.index-Q2orw1n.js",
+        "/assets/styles/app.css": "data:application/javascript,",
+        "/assets/bootstrap.js": "/assets/bootstrap-oQyLn8f.js",
+        "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-djqeLqa.js",
+        "@stimulus-components/clipboard": "/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js",
+        "@stimulus-components/scroll-progress": "/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js",
+        "@hotwired/stimulus": "/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js",
+        "/assets/@symfony/ux-turbo/turbo_controller.js": "/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js",
+        "/assets/@symfony/ux-typed/controller.js": "/assets/@symfony/ux-typed/controller-KqqaUoQ.js",
+        "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-VYgvytJ.js",
+        "@hotwired/turbo": "/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js",
+        "typed.js": "/assets/vendor/typed.js/typed.js.index-_zctSmG.js",
+        "bootstrap": "/assets/vendor/bootstrap/bootstrap.index-rt72SdS.js",
+        "@popperjs/core": "/assets/vendor/@popperjs/core/core.index-ZE0xRfu.js",
+        "bootstrap/dist/css/bootstrap.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fbootstrap%2Fdist%2Fcss%2Fbootstrap.min-FxLwN4-.css%22%7D%29%29",
+        "flowbite-datepicker": "/assets/vendor/flowbite-datepicker/flowbite-datepicker.index-o9gVwB8.js",
+        "flowbite/dist/flowbite.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fflowbite%2Fdist%2Fflowbite.min-jce53wr.css%22%7D%29%29",
+        "flowbite/plugin": "/assets/vendor/flowbite/plugin-fQmEd4q.js",
+        "mini-svg-data-uri": "/assets/vendor/mini-svg-data-uri/mini-svg-data-uri.index-8WQk1DQ.js",
+        "tailwindcss/plugin": "/assets/vendor/tailwindcss/plugin-Eent4J-.js",
+        "tailwindcss/defaultTheme": "/assets/vendor/tailwindcss/defaultTheme-g5cacVq.js",
+        "tailwindcss/colors": "/assets/vendor/tailwindcss/colors-cCy2oHm.js"
+    }
+}
+</script><script async data-turbo-track="reload">
+if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (function () {
+    const script = document.createElement('script');
+    script.src = 'https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js';
+    script.setAttribute('async', 'async');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('integrity', 'sha384-ie1x72Xck445i0j4SlNJ5W5iGeL3Dpa0zD48MZopgWsjNB/lt60SuG1iduZGNnJn');
+    script.setAttribute('data-turbo-track', 'reload');
+    document.head.appendChild(script);
+})();
+</script>
+<link rel="modulepreload" href="/assets/app-9GMUmJo.js">
+<link rel="modulepreload" href="/assets/vendor/flowbite/flowbite.index-Q2orw1n.js">
+<link rel="modulepreload" href="/assets/bootstrap-oQyLn8f.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/loader-djqeLqa.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-typed/controller-KqqaUoQ.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-VYgvytJ.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js">
+<link rel="modulepreload" href="/assets/vendor/typed.js/typed.js.index-_zctSmG.js">
+<script type="module" data-turbo-track="reload">import 'app';</script>
+        
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HY1P5Z0CLJ');
+            </script>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+<nav class="bg-white mb-12 dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo-white.png" class="h-10" alt="TCPX Logo" />
+            <div class="flex flex-col">
+                <span class="text-xl font-semibold whitespace-nowrap dark:text-white">The Coding People X</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Automated Upgrades & Migrations</span>
+            </div>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="/services" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</a>
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/services"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-white">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-8">
+                    <a href="/blog" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+                    <span class="mx-2">›</span>
+                    <span class="text-gray-700 dark:text-gray-300">Automated Database Refactoring: Converting Raw PHP Queries to Doctrine</span>
+                </nav>
+
+                <div class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-3 uppercase tracking-wide">2026-03-24</div>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">Automated Database Refactoring: Converting Raw PHP Queries to Doctrine</h1>
+
+                <p class="text-lg text-gray-500 dark:text-gray-400 mb-10 border-b border-gray-200 dark:border-gray-700 pb-10">How to safely migrate raw SQL queries scattered across a legacy PHP codebase to Doctrine ORM using Indoctrinate: the dual-path pattern, repository introduction, and incremental cutover without big-bang risk.</p>
+
+                <div class="article-body">
+                    <p>A large legacy PHP application typically has SQL queries distributed across hundreds of files. Controllers, service classes, model files, even view helpers — anywhere the developer needed data, a query went in. Migrating this to Doctrine ORM isn't a find-and-replace operation. Done wrong it introduces bugs in business-critical paths. Done right it gives you a testable, maintainable persistence layer that survives framework upgrades.</p>
+<p>This article describes the incremental approach we use: automated schema analysis with <a href="https://github.com/Kerrialn/indoctrinate">Indoctrinate</a>, interface-first abstraction, dual-path validation, and cutover.</p>
+<h2>Step 1: Automated schema analysis with Indoctrinate</h2>
+<p>Before writing any code, you need a complete picture of your schema's current state — where it diverges from Doctrine's expectations and where inconsistencies exist that will cause mapping problems later.</p>
+<p><a href="https://github.com/Kerrialn/indoctrinate">Indoctrinate</a> is an automated tool that synchronises your database with Doctrine specifications and surfaces schema inconsistencies. Install it:</p>
+<pre><code class="language-bash">composer require kerrialn/indoctrinate</code></pre>
+<p>Create a configuration file at <code>config/indoctrinate.php</code>:</p>
+<pre><code class="language-php">&lt;?php
+
+use Indoctrinate\Config\DbFixerConfig;
+
+return static function (DbFixerConfig $config): void {
+    $config-&gt;connection(
+        driver: 'pdo_mysql',
+        host: 'localhost',
+        port: 3306,
+        dbname: 'your_database',
+        user: 'your_user',
+        password: 'your_password',
+    );
+
+    $config-&gt;rules([
+        \Indoctrinate\Rule\EnsureAutoIncrementPrimaryKeyRule::class =&gt; [
+            'excludes' =&gt; ['%session%', '%cache%'],
+        ],
+    ]);
+};</code></pre>
+<p>Run a dry-run first to see what it would change without touching anything:</p>
+<pre><code class="language-bash">php bin/indoctrinate fix --dry</code></pre>
+<p>Then apply fixes:</p>
+<pre><code class="language-bash">php bin/indoctrinate fix --log=var/log/indoctrinate</code></pre>
+<p>Indoctrinate gives you a prioritised schema remediation list: normalisation violations, missing auto-increment primary keys, column-to-type mismatches, and constraint gaps. This is your starting inventory — the database state Doctrine will need to map against.</p>
+<h2>Step 2: Inventory every raw query in the codebase</h2>
+<p>With the schema picture from Indoctrinate, now map the PHP side: every <code>mysqli_query</code>, <code>PDO::query</code>, <code>PDO::prepare</code>, <code>pg_query</code>, and any custom query-runner method your application wraps.</p>
+<p>Group them by table (or primary entity). The goal is to understand which tables are accessed by how many different query patterns, and which access patterns are candidates for consolidation behind a repository.</p>
+<p>A table accessed in 50 different ways through 50 different files needs a different strategy to one accessed in three consistent ways. Both are fixable; the complexity differs.</p>
+<h2>Step 3: Define repository interfaces first</h2>
+<p>Before writing Doctrine entity mappings or <code>EntityRepository</code> classes, define the repository interface in PHP. This is pure domain code — no Doctrine dependency:</p>
+<pre><code class="language-php">interface OrderRepository
+{
+    public function findById(OrderId $id): ?Order;
+    public function findByCustomer(CustomerId $customerId): array;
+    public function save(Order $order): void;
+}</code></pre>
+<p>This interface represents what your application actually needs from the database — not what the database happens to contain. It's the stable contract that both your application code and your persistence layer must agree on.</p>
+<h2>Step 4: The dual-path pattern</h2>
+<p>The safest way to introduce a Doctrine repository is to run it alongside the existing raw query for a period. Both paths execute; results are compared; discrepancies are logged:</p>
+<pre><code class="language-php">class DualPathOrderRepository implements OrderRepository
+{
+    public function findById(OrderId $id): ?Order
+    {
+        $legacyResult = $this-&gt;legacy-&gt;findById($id);
+        $doctrineResult = $this-&gt;doctrine-&gt;findById($id);
+
+        if ($legacyResult !== $doctrineResult) {
+            $this-&gt;logger-&gt;warning('Dual-path mismatch', [
+                'id' =&gt; $id-&gt;value(),
+                'legacy' =&gt; $legacyResult,
+                'doctrine' =&gt; $doctrineResult,
+            ]);
+        }
+
+        return $legacyResult; // legacy is authoritative until cutover
+    }
+}</code></pre>
+<p>Run this in production. Every mismatch is a bug in your Doctrine mapping — surface it now, not after cutover.</p>
+<h2>Step 5: Doctrine entity mapping</h2>
+<p>While the dual-path runs, iterate on your Doctrine entity mapping until mismatches drop to zero. Common causes of mismatches in legacy databases:</p>
+<ul>
+<li><strong>Column name divergence</strong> — legacy code uses <code>user_id</code>, Doctrine convention would use <code>userId</code>; you need explicit column mapping</li>
+<li><strong>Type coercion</strong> — legacy code stores booleans as <code>tinyint(1)</code>, Doctrine maps them differently by default</li>
+<li><strong>Nullable columns</strong> — legacy code treats empty string and null interchangeably; Doctrine's type system distinguishes them</li>
+<li><strong>Soft deletes</strong> — <code>deleted_at</code> columns that legacy code filters manually and Doctrine needs a filter for</li>
+<li><strong>Missing primary keys</strong> — Indoctrinate's <code>EnsureAutoIncrementPrimaryKeyRule</code> will have flagged these in Step 1; they must be fixed before Doctrine can map the entity</li>
+</ul>
+<h2>Step 6: Schema normalisation alongside the ORM migration</h2>
+<p>While introducing the ORM, you have the clearest possible view of your schema's problems. Indoctrinate handles many of these automatically. For the structural normalisation work that requires a human decision:</p>
+<ul>
+<li>Splitting wide tables (50+ columns) into related entities</li>
+<li>Extracting value objects (e.g. address fields → <code>Address</code> embeddable)</li>
+<li>Adding proper foreign key constraints to replace application-level enforcement</li>
+<li>Indexing columns that are filtered or joined on in queries</li>
+</ul>
+<p>Each schema change is applied as a reversible Doctrine migration. The expand-contract pattern keeps live traffic running during changes: add the new column, backfill it, switch reads to the new column, switch writes, drop the old column. Never drop in the same migration as the alter.</p>
+<p>Re-run <code>php bin/indoctrinate fix --dry</code> after each batch of schema changes to verify the schema is now in a state Doctrine expects.</p>
+<h2>Step 7: Cutover and legacy query removal</h2>
+<p>Once the dual-path shows zero mismatches across a meaningful production traffic window (typically one to two weeks), switch the authoritative path to Doctrine and remove the legacy implementation:</p>
+<pre><code class="language-php">class ProductionOrderRepository implements OrderRepository
+{
+    public function findById(OrderId $id): ?Order
+    {
+        return $this-&gt;doctrine-&gt;findById($id);
+    }
+}</code></pre>
+<p>Remove the dual-path wrapper. Remove the legacy query class. The raw SQL is gone.</p>
+<h2>What this achieves</h2>
+<p>After this process, your database layer is:</p>
+<ul>
+<li><strong>Testable</strong> — repositories can be tested with a test database or a mock, independently of the application</li>
+<li><strong>Upgradeable</strong> — Doctrine entity classes are refactorable with tools like Rector; raw SQL is not</li>
+<li><strong>Auditable</strong> — every query is behind an interface; there are no hidden query sites</li>
+<li><strong>Schema-versioned</strong> — every change has a migration; the schema history is in your repository</li>
+<li><strong>Doctrine-consistent</strong> — Indoctrinate can be run on any future schema drift to catch problems early</li>
+</ul>
+<p>This is the foundation that makes subsequent PHP 8 upgrades, framework migrations, and architectural improvements safe to execute. Once raw queries are behind repository interfaces, Rector can upgrade the surrounding PHP code without touching persistence logic.</p>
+<p>If your codebase has a raw query problem at scale, <a href="/contact">get in touch</a> — we scope the inventory and migration path before committing to a timeline.</p>
+                </div>
+
+                <hr class="my-12 border-gray-200 dark:border-gray-700">
+
+                <div class="rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Need help with this?</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">TCPX specialises in PHP systems architecture, automated refactoring with Rector, and database layer modernisation. Get in touch to discuss your project.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="/contact" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Get in touch</a>
+                        <a href="/blog" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-600 border border-blue-200 dark:border-gray-600">More articles</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
+    Copyright © 2026 tcpx.co.uk
+</footer>
+
+</body>
+</html>

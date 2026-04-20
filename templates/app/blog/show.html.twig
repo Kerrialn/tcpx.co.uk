@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ post.title }} | TCPX{% endblock %}
+
+{% block meta_description %}{{ post.description ?? post.excerpt }}{% endblock %}
+{% block meta_keywords %}{{ post.keywords ?? '' }}{% endblock %}
+
+{% block og_title %}{{ post.title }}{% endblock %}
+{% block og_description %}{{ post.description ?? post.excerpt }}{% endblock %}
+{% block og_url %}https://tcpx.co.uk/blog/{{ post.slug }}{% endblock %}
+{% block twitter_title %}{{ post.title }}{% endblock %}
+{% block twitter_description %}{{ post.description ?? post.excerpt }}{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ post.title | json_encode | raw }},
+  "description": {{ (post.description ?? post.excerpt) | json_encode | raw }},
+  "datePublished": "{{ post.date }}",
+  "url": "https://tcpx.co.uk/blog/{{ post.slug }}",
+  "author": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  }
+}
+</script>
+{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-8">
+                    <a href="{{ path('blog_index') }}" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+                    <span class="mx-2">›</span>
+                    <span class="text-gray-700 dark:text-gray-300">{{ post.title }}</span>
+                </nav>
+
+                <div class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-3 uppercase tracking-wide">{{ post.date }}</div>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">{{ post.title }}</h1>
+
+                <p class="text-lg text-gray-500 dark:text-gray-400 mb-10 border-b border-gray-200 dark:border-gray-700 pb-10">{{ post.description ?? post.excerpt }}</p>
+
+                <div class="article-body">
+                    {{ post.html | raw }}
+                </div>
+
+                <hr class="my-12 border-gray-200 dark:border-gray-700">
+
+                <div class="rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Need help with this?</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">TCPX specialises in PHP systems architecture, automated refactoring with Rector, and database layer modernisation. Get in touch to discuss your project.</p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="{{ path('contact') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Get in touch</a>
+                        <a href="{{ path('blog_index') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-600 border border-blue-200 dark:border-gray-600">More articles</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

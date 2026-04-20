@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/logo-white.png"/>
+    <title>Automated PHP Refactoring with Rector – TCPX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="Automated PHP refactoring using Rector: PHP 8 upgrades, framework migrations, custom AST rules, and large-scale code transformations applied safely and auditably to your codebase.">
+    <meta name="keywords"
+          content="automated PHP refactoring, Rector PHP, Rector PHP upgrade, PHP 8 automated migration, custom Rector rules, AST PHP refactoring, PHP code transformation, PHP 7 to 8 upgrade">
+    <meta name="author" content="TCPX">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Automated PHP Refactoring with Rector – TCPX">
+    <meta property="og:description"
+          content="Rector-powered automated PHP refactoring: PHP 8 upgrades, custom AST rules, and large-scale code transformations applied safely and auditably.">
+    <meta property="og:url" content="https://tcpx.co.uk/services/automated-php-refactoring">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/code-carousel.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automated PHP Refactoring with Rector – TCPX">
+    <meta name="twitter:description"
+          content="Rector-powered automated PHP refactoring: PHP 8 upgrades, custom AST rules, and large-scale code transformations applied safely.">
+    <meta name="twitter:image" content="/images/code-carousel.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TCPX",
+      "url": "https://tcpx.co.uk",
+      "logo": "https://tcpx.co.uk/images/logo-white.png",
+      "description": "PHP consultancy specialising in systems architecture, automated refactoring with Rector, and database layer modernisation.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3rd Floor Suite, 207 Regent Street",
+        "addressLocality": "London",
+        "postalCode": "W1B 3HH",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+420608187548",
+        "email": "info@tcpx.co.uk",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Automated PHP Refactoring",
+  "provider": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "name": "Automated PHP Refactoring with Rector",
+  "description": "Rector-powered automated PHP refactoring service: PHP 7 to 8 upgrades, framework migrations, custom AST rules, and auditable large-scale code transformations.",
+  "url": "https://tcpx.co.uk/services/automated-php-refactoring",
+  "areaServed": "GB"
+}
+</script>
+
+                
+                        
+<link rel="stylesheet" href="/assets/styles/app-AbbTHjh.css">
+<script type="importmap" data-turbo-track="reload">
+{
+    "imports": {
+        "app": "/assets/app-9GMUmJo.js",
+        "flowbite": "/assets/vendor/flowbite/flowbite.index-Q2orw1n.js",
+        "/assets/styles/app.css": "data:application/javascript,",
+        "/assets/bootstrap.js": "/assets/bootstrap-oQyLn8f.js",
+        "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-djqeLqa.js",
+        "@stimulus-components/clipboard": "/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js",
+        "@stimulus-components/scroll-progress": "/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js",
+        "@hotwired/stimulus": "/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js",
+        "/assets/@symfony/ux-turbo/turbo_controller.js": "/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js",
+        "/assets/@symfony/ux-typed/controller.js": "/assets/@symfony/ux-typed/controller-KqqaUoQ.js",
+        "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-VYgvytJ.js",
+        "@hotwired/turbo": "/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js",
+        "typed.js": "/assets/vendor/typed.js/typed.js.index-_zctSmG.js",
+        "bootstrap": "/assets/vendor/bootstrap/bootstrap.index-rt72SdS.js",
+        "@popperjs/core": "/assets/vendor/@popperjs/core/core.index-ZE0xRfu.js",
+        "bootstrap/dist/css/bootstrap.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fbootstrap%2Fdist%2Fcss%2Fbootstrap.min-FxLwN4-.css%22%7D%29%29",
+        "flowbite-datepicker": "/assets/vendor/flowbite-datepicker/flowbite-datepicker.index-o9gVwB8.js",
+        "flowbite/dist/flowbite.min.css": "data:application/javascript,document.head.appendChild%28Object.assign%28document.createElement%28%22link%22%29%2C%7Brel%3A%22stylesheet%22%2Chref%3A%22%2Fassets%2Fvendor%2Fflowbite%2Fdist%2Fflowbite.min-jce53wr.css%22%7D%29%29",
+        "flowbite/plugin": "/assets/vendor/flowbite/plugin-fQmEd4q.js",
+        "mini-svg-data-uri": "/assets/vendor/mini-svg-data-uri/mini-svg-data-uri.index-8WQk1DQ.js",
+        "tailwindcss/plugin": "/assets/vendor/tailwindcss/plugin-Eent4J-.js",
+        "tailwindcss/defaultTheme": "/assets/vendor/tailwindcss/defaultTheme-g5cacVq.js",
+        "tailwindcss/colors": "/assets/vendor/tailwindcss/colors-cCy2oHm.js"
+    }
+}
+</script><script async data-turbo-track="reload">
+if (!HTMLScriptElement.supports || !HTMLScriptElement.supports('importmap')) (function () {
+    const script = document.createElement('script');
+    script.src = 'https://ga.jspm.io/npm:es-module-shims@1.10.0/dist/es-module-shims.js';
+    script.setAttribute('async', 'async');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.setAttribute('integrity', 'sha384-ie1x72Xck445i0j4SlNJ5W5iGeL3Dpa0zD48MZopgWsjNB/lt60SuG1iduZGNnJn');
+    script.setAttribute('data-turbo-track', 'reload');
+    document.head.appendChild(script);
+})();
+</script>
+<link rel="modulepreload" href="/assets/app-9GMUmJo.js">
+<link rel="modulepreload" href="/assets/vendor/flowbite/flowbite.index-Q2orw1n.js">
+<link rel="modulepreload" href="/assets/bootstrap-oQyLn8f.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/loader-djqeLqa.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/clipboard/clipboard.index-j0OMLL_.js">
+<link rel="modulepreload" href="/assets/vendor/@stimulus-components/scroll-progress/scroll-progress.index-MLoYIcU.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/stimulus/stimulus.index-oUGxBTh.js">
+<link rel="modulepreload" href="/assets/@symfony/stimulus-bundle/controllers-A1P0Whn.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-turbo/turbo_controller-zl4y2v3.js">
+<link rel="modulepreload" href="/assets/@symfony/ux-typed/controller-KqqaUoQ.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-VYgvytJ.js">
+<link rel="modulepreload" href="/assets/vendor/@hotwired/turbo/turbo.index-gQ9E7xo.js">
+<link rel="modulepreload" href="/assets/vendor/typed.js/typed.js.index-_zctSmG.js">
+<script type="module" data-turbo-track="reload">import 'app';</script>
+        
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY1P5Z0CLJ"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-HY1P5Z0CLJ');
+            </script>
+            </head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+
+<nav class="bg-white mb-12 dark:bg-gray-900 w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo-white.png" class="h-10" alt="TCPX Logo" />
+            <div class="flex flex-col">
+                <span class="text-xl font-semibold whitespace-nowrap dark:text-white">The Coding People X</span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Automated Upgrades & Migrations</span>
+            </div>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <a href="/services" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</a>
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/services"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact"
+                       class="block py-2 px-3 rounded md:p-0 md:hover:text-blue-700 md:dark:hover:text-blue-500
+                       text-gray-500 dark:text-gray-400">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="min-h-screen">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <a href="/services" class="hover:text-blue-600 dark:hover:text-blue-400">Services</a>
+                    <span class="mx-2">›</span>
+                    <span>Automated PHP Refactoring</span>
+                </nav>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Automated PHP Refactoring with Rector</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    Manual refactoring of a large PHP codebase is slow, error-prone, and expensive. Rector transforms your code automatically using Abstract Syntax Tree (AST) analysis — applying hundreds or thousands of changes in a single auditable pass, with every transformation reviewable before it merges. We use Rector as the engine of our automated refactoring service, and we write custom rules when off-the-shelf sets don't cover your specific patterns.
+                </p>
+
+                <!-- What is Rector -->
+                <div class="mb-12 rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">What is Rector?</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-3">Rector is an open-source PHP tool that parses your code into an AST (Abstract Syntax Tree), applies transformation rules, and writes the modified code back. Unlike search-and-replace, it understands types, scopes, and context — so transformations are semantically correct, not just textual.</p>
+                    <p class="text-gray-700 dark:text-gray-300">Rector ships with rule sets for PHP version upgrades, Symfony migrations, Laravel migrations, PHPUnit upgrades, dead code removal, type declarations, and more. When those don't match your codebase, we write custom rules.</p>
+                </div>
+
+                <!-- What we do -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">How we run Rector refactoring engagements</h2>
+                    <div class="space-y-6">
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">1. Codebase analysis</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We run static analysis tools alongside Rector's dry-run mode to map your codebase: which patterns are present, how many occurrences, what custom rules will be required, and what the risk profile is for each transformation category.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">2. Rule set configuration</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We configure Rector rule sets appropriate to your target PHP version and framework, then write additional custom rules for patterns specific to your codebase — deprecated internal APIs, bespoke helper functions, proprietary patterns. Custom rules are tested against fixtures before being applied.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">3. Batched, auditable runs</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We don't apply everything at once. Transformations are batched by rule type and applied as separate pull requests: each diff is reviewable, each change has a clear cause, and the test suite gates every batch. Nothing merges that breaks a test.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">4. CI integration</h3>
+                            <p class="text-gray-700 dark:text-blue-300">We wire Rector into your CI pipeline so it runs on every pull request, preventing regression to deprecated patterns as your team continues shipping features during the migration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common use cases -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Common Rector refactoring use cases</h2>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>PHP 7.x → PHP 8.0 / 8.1 / 8.2 / 8.3 syntax upgrades</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Adding typed properties and return type declarations</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Symfony 3/4/5 → Symfony 6/7 migrations</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Replacing deprecated functions and removed APIs</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Dead code elimination across large codebases</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Migrating from one ORM to another (e.g. Propel → Doctrine)</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Replacing custom service location with DI</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Custom rules for proprietary in-house patterns</li>
+                    </ul>
+                </div>
+
+                <!-- What you get -->
+                <div class="mb-12 rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">What you get at the end</h2>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>A fully upgraded codebase with all transformations applied and tested</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Custom Rector rules you can reuse and extend</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Rector integrated into your CI pipeline</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Documentation of transformations applied and why</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Handover to your team with guidance on maintaining the Rector config</li>
+                    </ul>
+                </div>
+
+                <!-- Related services -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Related services</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <a href="/services/php-systems-architecture" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                            <div class="font-semibold text-gray-900 dark:text-white mb-1">PHP Systems Architecture</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Define the target architecture before running automated refactoring — so transformations land in the right structure.</div>
+                        </a>
+                        <a href="/services/database-refactoring" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                            <div class="font-semibold text-gray-900 dark:text-white mb-1">Database Layer Refactoring</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Pair Rector-based code refactoring with DB layer modernisation for a complete application upgrade.</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="mb-20 flex flex-col sm:flex-row gap-3">
+                    <a href="/contact" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Discuss your Rector project</a>
+                    <a href="/services" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-800 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-700 border border-blue-200 dark:border-gray-700">See all services</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="p-4 text-center bg-gray-50 dark:bg-gray-800 text-sm text-gray-500 dark:text-gray-400">
+    Copyright © 2026 tcpx.co.uk
+</footer>
+
+</body>
+</html>

@@ -22,6 +22,24 @@ final class AppController extends AbstractController
         return $this->render('app/services.html.twig');
     }
 
+    #[Route(path: '/services/php-systems-architecture', name: 'service_php_systems_architecture')]
+    public function phpSystemsArchitecture(): Response
+    {
+        return $this->render('app/service/php-systems-architecture.html.twig');
+    }
+
+    #[Route(path: '/services/automated-php-refactoring', name: 'service_automated_php_refactoring')]
+    public function automatedPhpRefactoring(): Response
+    {
+        return $this->render('app/service/automated-php-refactoring.html.twig');
+    }
+
+    #[Route(path: '/services/database-refactoring', name: 'service_database_refactoring')]
+    public function databaseRefactoring(): Response
+    {
+        return $this->render('app/service/database-refactoring.html.twig');
+    }
+
     #[Route(path: '/faq', name: 'faq')]
     public function faq(): Response
     {

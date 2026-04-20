@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PHP Systems Architecture Consultancy – TCPX{% endblock %}
+
+{% block meta_description %}Expert PHP systems architecture consultancy. We design clean, layered PHP application structures: separating domain logic, defining service boundaries, and building codebases that survive framework changes.{% endblock %}
+{% block meta_keywords %}PHP systems architecture, PHP architect consultant, PHP application design, domain-driven design PHP, PHP service layer design, hexagonal architecture PHP, PHP clean architecture{% endblock %}
+
+{% block og_title %}PHP Systems Architecture Consultancy – TCPX{% endblock %}
+{% block og_description %}We design clean, layered PHP application structures: separating domain logic, defining service boundaries, and building codebases that survive framework changes.{% endblock %}
+{% block og_url %}https://tcpx.co.uk/services/php-systems-architecture{% endblock %}
+{% block twitter_title %}PHP Systems Architecture Consultancy – TCPX{% endblock %}
+{% block twitter_description %}Clean, layered PHP application architecture: domain logic separation, service boundary design, and framework-agnostic structures.{% endblock %}
+
+{% block json_ld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "PHP Systems Architecture Consultancy",
+  "provider": {
+    "@type": "Organization",
+    "name": "TCPX",
+    "url": "https://tcpx.co.uk"
+  },
+  "name": "PHP Systems Architecture Consultancy",
+  "description": "Expert PHP systems architecture consultancy: clean layered structures, domain logic separation, service boundary design, and framework-agnostic codebases.",
+  "url": "https://tcpx.co.uk/services/php-systems-architecture",
+  "areaServed": "GB"
+}
+</script>
+{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center">
+            <div class="w-full md:w-8/12">
+
+                <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6">
+                    <a href="{{ path('services') }}" class="hover:text-blue-600 dark:hover:text-blue-400">Services</a>
+                    <span class="mx-2">›</span>
+                    <span>PHP Systems Architecture</span>
+                </nav>
+
+                <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">PHP Systems Architecture Consultancy</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    Poor PHP architecture compounds with every feature added. Tangled dependencies, fat controllers, business logic buried in views — these aren't just code quality problems, they're upgrade blockers and valuation risks. We design clean, layered PHP application structures that can be maintained, upgraded, and handed over without chaos.
+                </p>
+
+                <!-- What we do -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">What PHP systems architecture work involves</h2>
+                    <div class="space-y-6">
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Architecture audit</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We analyse your existing codebase for coupling problems, violated boundaries, and structural debt. We measure cyclomatic complexity, dependency graphs, and layer violations — and produce a written assessment of what's blocking you and why.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Domain logic separation</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Business rules that live in controllers, views, or raw SQL queries can't be tested, can't be reused, and can't survive a framework migration. We extract domain logic into a framework-agnostic core: pure PHP classes that own the rules and depend on nothing external.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Service boundary design</h3>
+                            <p class="text-gray-700 dark:text-gray-300">We define clear interfaces between layers — application services, domain repositories, infrastructure adapters. This makes each component replaceable and testable in isolation, and sets the foundation for safe incremental upgrades using tools like Rector.</p>
+                        </div>
+                        <div class="rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Layered architecture roadmap</h3>
+                            <p class="text-gray-700 dark:text-gray-300">Architecture doesn't change overnight. We produce a prioritised migration path: which parts to restructure first, which to leave until later, and how to move incrementally without freezing feature development. Every step is production-safe.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patterns we work with -->
+                <div class="mb-12 rounded-2xl bg-gray-50 dark:bg-gray-800 p-6 border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Patterns and approaches we use</h2>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Hexagonal / Ports and Adapters architecture</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Domain-Driven Design (DDD) tactical patterns</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>CQRS and event sourcing where appropriate</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Clean Architecture and dependency inversion</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Symfony service layer and DI container design</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Repository pattern over raw SQL / Active Record</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Anti-corruption layers for legacy code integration</li>
+                        <li class="flex items-start"><span class="mr-2 mt-1 text-blue-600">✓</span>Strangler Fig for incremental migration</li>
+                    </ul>
+                </div>
+
+                <!-- Why architecture first -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Why architecture work comes before automated refactoring</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        Running Rector or any automated refactoring tool against a structurally unsound codebase moves the mess around without fixing it. Architecture work establishes the target state — the structure you're refactoring <em>toward</em>. Once that's defined, automated tools like Rector can apply transformations with confidence that the result is correct and maintainable.
+                    </p>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        This is why our engagements typically start with a <a href="{{ path('services') }}" class="text-blue-600 dark:text-blue-400 underline">Valuation Recovery Report</a> that covers architecture before touching the code.
+                    </p>
+                </div>
+
+                <!-- Related services -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Related services</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <a href="{{ path('service_automated_php_refactoring') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                            <div class="font-semibold text-gray-900 dark:text-white mb-1">Automated PHP Refactoring with Rector</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">AST-based automated code transformation for PHP 8 upgrades and framework migrations.</div>
+                        </a>
+                        <a href="{{ path('service_database_refactoring') }}" class="rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-colors">
+                            <div class="font-semibold text-gray-900 dark:text-white mb-1">Database Layer Refactoring</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Schema normalisation, ORM migration, and DB layer modernisation using our DB Fixer tooling.</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="mb-20 flex flex-col sm:flex-row gap-3">
+                    <a href="{{ path('contact') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-white bg-blue-600 hover:bg-blue-700 shadow-md">Book an architecture review</a>
+                    <a href="{{ path('services') }}" class="inline-flex items-center justify-center rounded-xl px-5 py-3 text-blue-700 bg-blue-50 dark:bg-gray-800 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-gray-700 border border-blue-200 dark:border-gray-700">See all services</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
