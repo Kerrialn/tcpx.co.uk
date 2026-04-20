@@ -61,7 +61,6 @@
         "phpstan": "php -d memory_limit=256M vendor/bin/phpstan analyze",
         "check-cs": "vendor/bin/ecs check --ansi",
         "fix-cs": "vendor/bin/ecs check --fix --ansi",
-        "test": "vendor/bin/phpunit",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
@@ -85,7 +84,6 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^2.0",
-        "phpunit/phpunit": "^9.5",
         "rector/rector": "^2.0",
         "rector/swiss-knife": "^2.1",
         "shipmonk/composer-dependency-analyser": "^1.8",
