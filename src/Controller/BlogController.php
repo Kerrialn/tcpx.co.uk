@@ -16,7 +16,8 @@ final class BlogController extends AbstractController
     private string $contentDir;
 
     public function __construct(
-        #[Autowire(param: 'kernel.project_dir')] string $projectDir,
+        #[Autowire(param: 'kernel.project_dir')]
+        string $projectDir,
     ) {
         $this->contentDir = $projectDir . '/content/blog';
     }
@@ -28,7 +29,9 @@ final class BlogController extends AbstractController
 
         usort($posts, static fn (array $a, array $b) => strcmp($b['date'], $a['date']));
 
-        return $this->render('app/blog/index.html.twig', ['posts' => $posts]);
+        return $this->render('app/blog/index.html.twig', [
+            'posts' => $posts,
+        ]);
     }
 
     #[Route(path: '/blog/{slug}', name: 'blog_post')]
@@ -40,9 +43,14 @@ final class BlogController extends AbstractController
             throw new NotFoundHttpException();
         }
 
-        return $this->render('app/blog/show.html.twig', ['post' => $post]);
+        return $this->render('app/blog/show.html.twig', [
+            'post' => $post,
+        ]);
     }
 
+    /**
+     * @return array<int, array<string, string>>
+     */
     private function loadAllPosts(): array
     {
         $posts = [];
@@ -57,6 +65,9 @@ final class BlogController extends AbstractController
         return $posts;
     }
 
+    /**
+     * @return array<string, string>|null
+     */
     private function loadPost(string $slug): ?array
     {
         foreach (glob($this->contentDir . '/*.md') as $file) {
@@ -69,6 +80,9 @@ final class BlogController extends AbstractController
         return null;
     }
 
+    /**
+     * @return array<string, string>|null
+     */
     private function parseFile(string $file): ?array
     {
         $content = file_get_contents($file);
@@ -77,7 +91,7 @@ final class BlogController extends AbstractController
             return null;
         }
 
-        if (!str_starts_with($content, '---')) {
+        if (! str_starts_with($content, '---')) {
             return null;
         }
 
@@ -99,12 +113,15 @@ final class BlogController extends AbstractController
         ]);
     }
 
+    /**
+     * @return array<string, string>
+     */
     private function parseFrontmatter(string $raw): array
     {
         $data = [];
 
         foreach (explode("\n", trim($raw)) as $line) {
-            if (!str_contains($line, ':')) {
+            if (! str_contains($line, ':')) {
                 continue;
             }
 
